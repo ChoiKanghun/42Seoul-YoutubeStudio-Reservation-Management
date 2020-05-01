@@ -16,7 +16,7 @@ public class DBConfig implements TransactionManagementConfigurer {
 
 	private String driverClassName = "com.mysql.cj.jdbc.Driver";
 	private String url = 
-			"jdbc:mysql://localhost:3306/reservationdb?useUnicode=true&characterEncoding=utf8&verifyServerCertificate=false&useSSL=true&serverTimezone=UTC";
+			"jdbc:mysql://localhost:3306/ft_youtube?useUnicode=true&characterEncoding=utf8&verifyServerCertificate=false&useSSL=true&serverTimezone=UTC";
 	private String username = "ftkchoi";
 	private String password = "kchoi123!@#";
 
