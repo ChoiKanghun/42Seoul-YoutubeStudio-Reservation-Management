@@ -1,0 +1,16 @@
+thead tr {
+  background-color: red;
+  height:120px;
+}
+
+tbody tr {
+  background-color: purple;
+  height:120px;
+}
+
+.occupied span::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+  }
