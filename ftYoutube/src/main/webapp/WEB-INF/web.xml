@@ -9,7 +9,7 @@
 	</context-param>
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>kr.or.connect.reservationManagement.config.ApplicationConfig
+		<param-value>kr.or.connect.ftYoutube.config.ApplicationConfig
 		</param-value>
 	</context-param>
 	<listener>
@@ -28,7 +28,7 @@
 		</init-param>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>kr.or.connect.reservationManagement.config.WebMvcContextConfiguration
+			<param-value>kr.or.connect.ftYoutube.config.WebMvcContextConfiguration
 			</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
