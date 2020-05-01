@@ -34,6 +34,7 @@
           Studio2
         </div>
         </div>
+        
     </section>
     <section style="float:left;width:100%;">
       <table style="border:1px solid black;width:100%;">
