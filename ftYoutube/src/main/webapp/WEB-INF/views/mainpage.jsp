@@ -8,7 +8,6 @@
   <meta name="viewport" content="width=device-width">
 
   <style>
-
   </style>
   <link href="css/mainpage_style.css" rel="stylesheet" type="text/css" />
   <!-- <style type='text/css'>
