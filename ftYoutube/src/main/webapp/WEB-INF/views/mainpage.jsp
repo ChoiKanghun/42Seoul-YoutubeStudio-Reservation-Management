@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
   <title>t</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
@@ -125,5 +126,12 @@
     <div>에러 발생 시 contact</div>
   </footer>
 </body>
+=======
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	Just for test
+>>>>>>> branch 'master' of https://github.com/ChoiKanghun/42Seoul-YoutubeStudio-Reservation-Management.git
 </body>
 </html>
