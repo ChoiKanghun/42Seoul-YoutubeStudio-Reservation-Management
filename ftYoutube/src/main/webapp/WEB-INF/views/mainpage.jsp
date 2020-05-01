@@ -33,7 +33,7 @@
         <div class="studio2_status" style="height:100px;line-height:100px;width:150px;background-color:#e05749;position:relative;margin-left:100px;display:inline-block;vertical-align:middle">
           Studio2
         </div>
-</div>
+        </div>
     </section>
     <section style="float:left;width:100%;">
       <table style="border:1px solid black;width:100%;">
