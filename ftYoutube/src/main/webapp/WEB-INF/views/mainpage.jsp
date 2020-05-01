@@ -14,7 +14,6 @@
   @-o-viewport {width:device-width;}
   @viewport {width:device-width;}
 </style> -->
-
 </head>
 
 
