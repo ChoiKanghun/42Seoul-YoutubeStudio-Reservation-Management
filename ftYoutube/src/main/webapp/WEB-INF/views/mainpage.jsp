@@ -14,7 +14,6 @@
   @-o-viewport {width:device-width;}
   @viewport {width:device-width;}
 </style> -->
-
 </head>
 <body style="width: 90%; margin: 0 auto;border:1px solid black">
   <header style="height:150px;border:black 1px solid">
