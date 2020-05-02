@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class ftYoutubeController {
-	@GetMapping(path="/mainpage")
-	public String mainpage() {
-		return "mainpage";
+	@GetMapping(path="/studio1")
+	public String studio1() {
+		return "studio1";
 	}
 }
