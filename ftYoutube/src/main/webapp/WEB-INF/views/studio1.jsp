@@ -23,16 +23,16 @@
 <body style="width:90%; margin: 0 auto;border:1px solid black">
 
   <header style="height:150px;border:black 1px solid;font-size:30px;text-align:center;vertical-align:middle;position:relative;">
-
+<div id="test"></div>
 
     <nav style="position:absolute;top:0px;right:0px;">
       <button type="button" class="btn_reservation" style="margin-right:10px;">예약하기</button>
       <button type="button" class="btn_cancellation" style="margin-right:20px;">예약취소</button>
     </nav>
     <span class="just_to_middle_align" style="line-height:150px;">
-      <div ><b>42 SEOUL Youtube Studio 예약 시스템</b></div>
+      <div><b>42 SEOUL Youtube Studio 예약 시스템</b></div>
     </span>
-    <img src="img/42.png" alt="42_logo" style="width:150px;position:absolute;left:0px;top:0px;"/>
+    <img src="img/42.png" alt="42_logo" style="width:100px;position:absolute;left:0px;top:0px;"/>
   </header>
 
   <aside style="float:left;width:15%;height:inherit;background-color:blue;">a
@@ -40,10 +40,10 @@
   <article style="overflow:hidden;">
     <section class = "occupied" style="height:150px;width:100%;background-color:skyblue;text-align:center;vertical-align:middle">
       <span class="just_to_middle_align" style="">
-        <div class="studio1_status" style="height:100px;line-height:100px;width:150px;background-color:#7bc379;position:relative;display:inline-block;">
+        <div class="studio1_status" data-snum="1" style="height:100px;line-height:100px;width:150px;background-color:#7bc379;position:relative;display:inline-block;">
           Studio1
         </div>
-        <div class="studio2_status" style="height:100px;line-height:100px;width:150px;background-color:#e05749;position:relative;margin-left:100px;display:inline-block;">
+        <div class="studio2_status" data-snum="2" style="height:100px;line-height:100px;width:150px;background-color:#e05749;position:relative;margin-left:100px;display:inline-block;">
           Studio2
         </div>
       </span>
@@ -62,9 +62,9 @@
             <td style="border:1px solid black;">일</td>
           </tr>
         </thead>
-        <tbody>
-          <tr style="border:1px solid black;">
-            <td style="border:1px solid black;">1</td>
+        <tbody class = "async_table">
+          <tr style="border:1px solid black;" data-hour="0">
+            <td style="border:1px solid black;">00:00</td>
             <td style="border:1px solid black;">2</td>
             <td style="border:1px solid black;">3</td>
             <td style="border:1px solid black;">4</td>
@@ -75,7 +75,7 @@
 
 
           </tr>
-          <tr style="border:1px solid black;">
+          <tr style="border:1px solid black;" data-hour="1">
             <td style="border:1px solid black;">7</td>
 
             <td style="border:1px solid black;">2</td>
@@ -86,7 +86,7 @@
             <td style="border:1px solid black;">6</td>
             <td style="border:1px solid black;">7</td>
           </tr>
-          <tr style="border:1px solid black;">
+          <tr style="border:1px solid black;" data-hour="2">
             <td style="border:1px solid black;">3</td>
             <td style="border:1px solid black;">3</td>
             <td style="border:1px solid black;">2</td>
@@ -97,7 +97,7 @@
             <td style="border:1px solid black;">7</td>
 
           </tr>
-          <tr style="border:1px solid black;">
+          <tr style="border:1px solid black;" data-hour="3">
             <td style="border:1px solid black;">4</td>
             <td style="border:1px solid black;">2</td>
             <td style="border:1px solid black;">3</td>
@@ -108,7 +108,7 @@
             <td style="border:1px solid black;">7</td>
 
           </tr>
-          <tr style="border:1px solid black;">
+          <tr style="border:1px solid black;" data-hour="4">
             <td style="border:1px solid black;">5</td>
             <td style="border:1px solid black;">2</td>
             <td style="border:1px solid black;">3</td>
@@ -117,7 +117,6 @@
             <td style="border:1px solid black;">6</td>
             <td style="border:1px solid black;">7</td>
             <td style="border:1px solid black;">7</td>
-
           </tr>
 
         </tbody>
@@ -138,7 +137,10 @@
     </div>
 
   </footer>
+    <script type="template" id="dayList">
+            <td style="border:1px solid black;">{user_id}</td>
+    </script>
 </body>
-<script src="test.js"></script>
+<script src="js/studio.js"></script>
 
 </html>
