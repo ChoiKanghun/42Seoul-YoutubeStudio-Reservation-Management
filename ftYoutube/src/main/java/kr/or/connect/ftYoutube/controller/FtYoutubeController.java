@@ -9,4 +9,10 @@ public class FtYoutubeController {
 	public String studio1() {
 		return "studio1";
 	}
+	
+	@GetMapping(path="/studio/reservation")
+	public String reservation()
+	{
+		return "studioReservation";
+	}
 }

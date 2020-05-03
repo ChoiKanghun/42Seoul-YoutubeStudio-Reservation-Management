@@ -28,4 +28,12 @@ public class FtYoutubeServiceImpl implements FtYoutubeService {
 	public List<Studio> getAllStudioTwo(){
 		return studioDao.getAllStudioTwo();
 	}
+	
+	public int updateByDayHour(Studio studio, Integer snum) {
+		return studioDao.updateByDayHour(studio, snum);
+	}
+	
+	public Studio selectByDayHour(Studio studio, Integer snum) {
+		return studioDao.selectByDayHour(studio, snum);
+	}
 }

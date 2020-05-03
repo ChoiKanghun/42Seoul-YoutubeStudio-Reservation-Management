@@ -6,7 +6,10 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -34,6 +37,20 @@ public class FtYoutubeAPIController {
 		}
 		
 		return map;
+	}
+	
+	@PostMapping(path="/post/studio")
+	public String write(@ModelAttribute Studio studio,
+			@RequestParam(name="number", required = true) int number) {
+		//select해서 해당 칸에 user_id가 존재하면 "fail"리턴.
+		//user_id가 '-'라면 insert 후 "success"리턴.
+		Studio selectUserId = ftYoutubeService.selectByDayHour(studio, number);
+		if (selectUserId.getUserId() != "-")
+			return ("fail");
+		else {
+			ftYoutubeService.updateByDayHour(studio, number);	
+		}
+		return ("success");
 	}
 
 }
