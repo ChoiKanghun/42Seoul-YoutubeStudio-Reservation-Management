@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-  <form class="" action="post_reservation" method="POST" style="margin : 0 auto;width:50%;text-align:center">
+  <form class="" action="delete/cancellation" method='GET' style="margin : 0 auto;width:50%;text-align:center">
     <fieldset>
     	<input class="radio_studio1" type = "radio" name="number" value = "1" checked/>Studio1
     	<input class="radio_studio2" type = "radio" name="number" value = "2"/>Studio2
@@ -60,15 +60,8 @@
       비밀번호 : <input class="user_pw_info" type="password" name="userPw" value="">
     </fieldset>
     <div class ="available">예약가능여부 확인</div>
-    <button id = "btn_submit" type="submit" style="display:none">submit</button>t
+    <button id = "btn_submit" type="submit">submit</button>t
 </form>
 <p id="test"></p>
 </body>
-<script src = "js/studioReservation.js"></script>
-<script>
-	function deleteBtn(){
-		document.querySelector("#btn_submit").style.display="none";
-		
-	}
-</script>
 </html>

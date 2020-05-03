@@ -15,4 +15,8 @@ public interface FtYoutubeService {
 	
 	//SELECT a record's user_id Depending on Hour and day condition
 	public Studio selectByDayHour(Studio studio, Integer snum);
+	
+	//DELETE FROM studio table
+	//condition : hour, day, userId, userPw
+	public int deleteStudio(Studio studio, Integer snum);
 }

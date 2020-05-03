@@ -36,4 +36,8 @@ public class FtYoutubeServiceImpl implements FtYoutubeService {
 	public Studio selectByDayHour(Studio studio, Integer snum) {
 		return studioDao.selectByDayHour(studio, snum);
 	}
+	
+	public int deleteStudio(Studio studio, Integer snum) {
+		return studioDao.deleteStudio(studio, snum);
+	}
 }

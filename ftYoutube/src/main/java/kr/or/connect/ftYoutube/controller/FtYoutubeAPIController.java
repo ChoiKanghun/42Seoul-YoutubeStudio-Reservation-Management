@@ -40,17 +40,53 @@ public class FtYoutubeAPIController {
 	}
 	
 	@PostMapping(path="/post/studio")
-	public String write(@ModelAttribute Studio studio,
+	public String postStudio(@ModelAttribute Studio studio,
 			@RequestParam(name="number", required = true) int number) {
 		//select해서 해당 칸에 user_id가 존재하면 "fail"리턴.
 		//user_id가 '-'라면 insert 후 "success"리턴.
 		Studio selectUserId = ftYoutubeService.selectByDayHour(studio, number);
-		if (selectUserId.getUserId() != "-")
-			return ("fail");
+
+		if (selectUserId.getUserId() != null) {
+			System.out.println("reservation failed");
+			return ("fail");	
+		}
 		else {
 			ftYoutubeService.updateByDayHour(studio, number);	
 		}
-		return ("success");
+		return ("redirect:reservation");
 	}
 
+	@GetMapping(path="/get/reservation", produces = "application/json; charset=utf-8")
+	@ResponseBody
+	public Map<String, Object> getReservation(@ModelAttribute Studio studio,
+			@RequestParam(name="number", required = true) int number)
+	{
+		Map<String, Object> map = new HashMap<>();
+		Studio selectUserId = ftYoutubeService.selectByDayHour(studio, number);
+		if (selectUserId.getUserId() != null) {
+			map.put("availability", "negative");
+		} else {
+			map.put("availability", "positive");
+		}
+		return map;
+	}
+	
+	@GetMapping(path="/delete/cancellation", produces = "application/json; charset=utf-8")
+	@ResponseBody
+	public Map<String, Object> deleteReservation(
+			@ModelAttribute Studio studio,
+			@RequestParam (name="number", required=true) int number)
+	{
+		Map<String, Object> map = new HashMap<>();
+		int deleteCount = 0;
+		try {
+			deleteCount = ftYoutubeService.deleteStudio(studio, number);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		map.put("deleteCount", deleteCount);
+		return map;
+		
+	}
+	
 }
