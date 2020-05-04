@@ -17,6 +17,12 @@ public class DaoSqls {
 	public static final String SELECT_BY_DAY_HOUR
 		= "SELECT user_id FROM studio:snum WHERE day = :day and hour = :hour";
 
+//select a record from studio table
+//condition : user_id, user_pw, day, hour and snum
+//used to check if client can use delete API 
+	public static final String CHECK_DELETABLE
+		= "SELECT id FROM studio:snum WHERE day = :day and hour = :hour and user_id = :userId and user_pw = :userPw";
+	
 //delete a record from studio table
 //depending on userId, userPw, day, hour
 	public static final String DELETE_STUDIO

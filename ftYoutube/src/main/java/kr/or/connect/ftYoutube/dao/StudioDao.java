@@ -1,5 +1,6 @@
 package kr.or.connect.ftYoutube.dao;
 
+import static kr.or.connect.ftYoutube.dao.DaoSqls.CHECK_DELETABLE;
 import static kr.or.connect.ftYoutube.dao.DaoSqls.DELETE_STUDIO;
 import static kr.or.connect.ftYoutube.dao.DaoSqls.SELECT_ALL_STUDIO_ONE;
 import static kr.or.connect.ftYoutube.dao.DaoSqls.SELECT_ALL_STUDIO_TWO;
@@ -65,6 +66,20 @@ public class StudioDao {
 		
 		return jdbc.queryForObject(SELECT_BY_DAY_HOUR, params, rowMapper);
 	}
+	
+	//return 'an' id if there's any matching record.
+	//be used to check if client's delete request is available
+	public Studio checkDeletable(Studio studio, Integer snum) {
+		Map<String, Object> params = new HashMap<>();
+		params.put("snum", snum);
+		params.put("day", studio.getDay());
+		params.put("hour", studio.getHour());
+		params.put("userId", studio.getUserId());
+		params.put("userPw", studio.getUserPw());
+		
+		return jdbc.queryForObject(CHECK_DELETABLE, params, rowMapper);
+	}
+	
 	//delete a record from studio table
 	//conditions: userId, userPw, day, hour
 	public int deleteStudio(Studio studio, Integer snum) {

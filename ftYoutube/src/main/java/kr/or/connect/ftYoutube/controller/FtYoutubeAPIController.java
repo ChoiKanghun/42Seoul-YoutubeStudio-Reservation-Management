@@ -71,6 +71,27 @@ public class FtYoutubeAPIController {
 		return map;
 	}
 	
+	@GetMapping(path="/check/cancellation", produces="application/json; charset=utf-8")
+	@ResponseBody
+	public Map<String, Object> checkCancellation(
+			@ModelAttribute Studio studio,
+			@RequestParam(name="number", required = true) int number)
+	{
+		Map<String, Object> map = new HashMap<>();
+		try {
+			Studio checkStudio = ftYoutubeService.checkDeletable(studio, number);
+			if (checkStudio.getId() != null) {
+				map.put("availability", "positive");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			map.put("availability", "negative");
+		}
+		
+		return map;
+	}
+	
+	
 	@PostMapping(path="/delete/cancellation", produces = "application/json; charset=utf-8")
 	@ResponseBody
 	public Map<String, Object> deleteReservation(

@@ -1,0 +1,236 @@
+@font-face {
+  font-family: Baloo2-Medium;
+  src: url('../fonts/Baloo_2/Baloo2-Medium.ttf');
+}
+
+@font-face {
+	font-family: CuteFont-Regular;
+	src: url('../fonts/Cute_Font/CuteFont-Regular.ttf');
+}
+
+@font-face{
+	font-family: Jua-Regular;
+	src: url('../fonts/Jua/Jua-Regular.ttf');
+}
+
+@font-face{
+	font-family: NanumGothicCoding-Regular;
+	src: url('../fonts/Nanum_Gothic_Coding/NanumGothicCoding-Regular.ttf');
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background: #38e49d;
+  background: -webkit-linear-gradient(45deg, #d8c9c9, #38e49d);
+  background: -o-linear-gradient(45deg, #d8c9c9, #38e49d);
+  background: -moz-linear-gradient(45deg, #d8c9c9, #38e49d);
+  background: linear-gradient(45deg, #d8c9c9, #38e49d);
+
+}
+
+legend {
+	font-family: Jua-Regular;
+}
+
+
+.wrap_content{
+  width: 500px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 42px 55px 45px 55px;
+}
+
+.wrap_input {
+  width: 100%;
+  position: relative;
+  border-bottom: 2px solid #d9d9d9;
+  padding-bottom: 13px;
+  margin-bottom: 27px;
+  
+}
+
+.label_input {
+  font-size: 13px;
+  color: #666666;
+  line-height: 1.5;
+  padding-left: 5px;
+	font-family: NanumGothicCoding-Regular;
+ 
+ }
+
+.wrap_radio{
+	padding: .8em .5em;
+	display:inline-block;
+	margin-left:15%;
+	font-family: Baloo2-Medium, "Comic Sans MS";
+	
+}
+
+.wrap_input > input {
+  outline: none;
+	border: none;
+  display: block;
+  width: 90%;
+  background: transparent;
+  font-size: 18px;
+  color: #333333;
+  line-height: 1.2;
+    padding: .8em .5em;
+    	font-family: NanumGothicCoding-Regular;
+    
+
+}
+
+input:focus {
+  border-color: transparent !important;
+}
+
+input[type="radio"]{
+  margin: 0 20px 0 20px;
+  
+}
+
+.wrap_input select{
+	width: 350px; 
+	height:60px;
+  	font-size: 18px;
+  	color: gray;
+ 	line-height: 1.2;
+	background-color: transparent;
+    padding: .8em .5em;
+	font-family: Jua-Regular;
+    border: none;
+    border-radius: 0px; 
+   
+}
+
+.wrap_input select option{
+	color: black;
+	font-family: Jua-Regular;
+	
+}
+
+.btn_area {
+	font-family: Jua-Regular;
+	
+}
+
+.btn_area .availability{
+	float:left;
+	position:relative;
+	top:10px;
+	left:5px;
+	font-family: Jua-Regular;
+	font-size:18px;
+	
+}
+.btn_area .available {
+	width:150px;
+	height:50px;
+	background-color: #d4ffd5;
+	display:inline-block;
+	float:right;
+	border-radius: 2em;
+	text-align:center;
+	margin:0px auto;
+	padding-bottom:5px;
+	font-family: Jua-Regular;
+	font-size:18px;
+	
+	
+}
+.btn_area .available p {
+	font-family: Jua-Regular;
+	font-size:18px;
+	color:#278465;
+}
+
+.btn_area button {
+	width:150px;
+	height:50px;
+	float:right;
+	outline: none !important;
+	border: none;
+	background: #d4ffd5;
+	border-radius: 2em;
+	font-size:18px;
+	font-family: Jua-Regular;
+	color:#278465;
+	
+}	
+
+button:hover {
+	cursor: pointer;
+}
+
+ /* Edge */	
+::-webkit-input-placeholder {font-family: Jua-Regular; }
+
+/* Internet Explorer 10-11 */
+:-ms-input-placeholder {font-family: Jua-Regular; }
+
+::placeholder {font-family: Jua-Regular; }
+
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; }
+input:focus::-moz-placeholder { color:transparent; }
+input:focus:-ms-input-placeholder { color:transparent; }
+
+select:focus::-webkit-input-placeholder { color:transparent; }
+select:focus:-moz-placeholder { color:transparent; }
+select:focus::-moz-placeholder { color:transparent; }
+select:focus:-ms-input-placeholder { color:transparent; }
+
+input::-webkit-input-placeholder { color: #adadad;}
+input:-moz-placeholder { color: #adadad;}
+input::-moz-placeholder { color: #adadad;}
+input:-ms-input-placeholder { color: #adadad;}
+
+select::-webkit-input-placeholder { color: #adadad;}
+select:-moz-placeholder { color: #adadad;}
+select::-moz-placeholder { color: #adadad;}
+select:-ms-input-placeholder { color: #adadad;}
+
+
+
+
+
+
+
+
+
+
+/*
+form div + div {
+    margin-top: 1em;
+}
+
+label {
+    // To make sure that all label have the same size and are properly align 
+    display: inline-block;
+    width: 120px;
+    text-align: right;
+}
+
+input {
+   // To make sure that all text fields have the same font settings
+   // By default, textareas have a monospace font 
+    font: 1em sans-serif;
+
+
+
+    // To harmonize the look & feel of text field border 
+    border: 1px solid #999;
+}
+*/
