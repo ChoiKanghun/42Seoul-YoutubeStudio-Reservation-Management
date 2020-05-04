@@ -86,6 +86,7 @@ public class FtYoutubeAPIController {
 		}
 		System.out.println(studio);
 		map.put("deleteCount", deleteCount);
+		
 		return map;
 		
 	}
