@@ -7,13 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-  <form class="" action="delete/cancellation" method='GET' style="margin : 0 auto;width:50%;text-align:center">
+  <form class="" action="cancellation" method='POST' style="margin : 0 auto;width:50%;text-align:center">
     <fieldset>
     	<input class="radio_studio1" type = "radio" name="number" value = "1" checked/>Studio1
     	<input class="radio_studio2" type = "radio" name="number" value = "2"/>Studio2
-      <legend>비회원 로그인</legend>
+      <legend>예약 취소하기</legend>
       요일 :
-     <select class="day_info" name="day" onchange="deleteBtn()">
+     <select class="day_info" name="day">
         <option value="monday">월</option>
         <option value="tuesday">화</option>
         <option value="wednesday">수</option>
@@ -23,7 +23,7 @@
         <option value="sunday">일</option>
       </select>
       시간 :
-      <select class="hour_info" name="hour" onchange="deleteBtn()">
+      <select class="hour_info" name="hour" >
         <optgroup label="오전">
           <option value="00">00:00</option>
           <option value="01">01:00</option>
@@ -54,14 +54,18 @@
         </optgroup>
       </select>
 
-<br>
-      아이디 : <input class="user_id_info" type="text" name="userId" value="">
+<br>yy
+      아이디 : <input class="user_id_info" type="text" name="userId">
       <br>
-      비밀번호 : <input class="user_pw_info" type="password" name="userPw" value="">
+      비밀번호 : <input class="user_pw_info" type="password" name="userPw">
+      <br>
+      비밀번호 확인 : <input class="user_pw_check" type="password">
     </fieldset>
     <div class ="available">예약가능여부 확인</div>
     <button id = "btn_submit" type="submit">submit</button>t
 </form>
 <p id="test"></p>
 </body>
+<script src = "js/password_hashing.js"></script>
+<script src = "js/studioCancellation.js"></script>
 </html>

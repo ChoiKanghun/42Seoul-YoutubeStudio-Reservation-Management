@@ -26,8 +26,8 @@
 <div id="test"></div>
 
     <nav style="position:absolute;top:0px;right:0px;">
-      <button type="button" class="btn_reservation" style="margin-right:10px;">예약하기</button>
-      <button type="button" class="btn_cancellation" style="margin-right:20px;">예약취소</button>
+      <a href = "reservation"><button type="button" class="btn_reservation" style="margin-right:10px;">예약하기</button></a>
+      <a href = "cancellation"><button type="button" class="btn_cancellation" style="margin-right:20px;">예약취소</button></a>
     </nav>
     <span class="just_to_middle_align" style="line-height:150px;">
       <div><b>42 SEOUL Youtube Studio 예약 시스템</b></div>

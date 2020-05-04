@@ -32,6 +32,16 @@ public class FtYoutubeController {
 		return "studioCancellation";
 	}
 	
+	@PostMapping(path="/reservation")
+	public String postReservation() {
+		return "studioReservation";
+	}
+	
+	@PostMapping(path="/cancellation")
+	public String postCancellation() {
+		return "studioCancellation";
+	}
+	
 	@PostMapping(path="/post_reservation")
 	public String reservationPost(@ModelAttribute Studio studio,
 			@RequestParam(name="number", required = true) int number) {

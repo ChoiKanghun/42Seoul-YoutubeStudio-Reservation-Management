@@ -71,7 +71,7 @@ public class FtYoutubeAPIController {
 		return map;
 	}
 	
-	@GetMapping(path="/delete/cancellation", produces = "application/json; charset=utf-8")
+	@PostMapping(path="/delete/cancellation", produces = "application/json; charset=utf-8")
 	@ResponseBody
 	public Map<String, Object> deleteReservation(
 			@ModelAttribute Studio studio,
@@ -84,6 +84,7 @@ public class FtYoutubeAPIController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		System.out.println(studio);
 		map.put("deleteCount", deleteCount);
 		return map;
 		
