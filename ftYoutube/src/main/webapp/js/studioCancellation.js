@@ -70,8 +70,9 @@ function submit_ajax(url){
 	
 	oReq.setRequestHeader = ("Content-type", "application/json");
 	oReq.responseType = "text";
+	window.alert("취소 되었습니다!")
+
 	oReq.addEventListener('load', function(){
-		window.alert("취소 되었습니다!")
 
 	});
 	oReq.send();

@@ -7,46 +7,33 @@
   <meta charset="UTF-8">
   <title>Insert title here</title>
   <link href="css/studioReservation.css" rel="stylesheet" type="text/css" />
+  <link href="css/studioReservation-media.css" rel="stylesheet" type="text/css" media="screen and (min-width: 359px) and (max-width:1024px)"/>
 
 </head>
 
 <body>
   <div class="container">
-  <header id = "header" style="height:150px;text-align:center;vertical-align:middle;position:relative;">
+  <header id = "header" >
 
-    <nav style="position:absolute;top:0px;right:0px;">
+    <nav >
 
-    <div class="to_reservation" onclick="location.href='reservation'">
-      <p>예약하기</p>
-    </div>
-    <div class="to_home" onclick="location.href='cancellation'">
-      <p>예약취소</p>
-    </div>
-    </nav>
-      <div id="main_title"><p><b>42 SEOUL Youtube Studio 예약 시스템</b><p></div>
-    <img src="img/42.png" alt="42_logo" style="width:100px;position:absolute;left:0px;top:0px;" />
-  </header>
-  
-<!--     <div class="to_home" onclick="location.href='studio1'">
+    <div class="to_home" onclick="location.href='studio'">
       <p>홈으로</p>
     </div>
     <div class="to_cancellation" onclick="location.href='cancellation'">
       <p>예약취소</p>
-    </div> 
- -->
+    </div>
+    </nav>
+      <div id="main_title"><p><b>42 SEOUL Youtube Studio 예약 시스템</b><p></div>
+    <a href="studio"><img class="logo_42" src="img/42.png" alt="42_logo" /></a>
+  </header>
+  
+
     <div class="wrap_content">
-      <form action="reservation" method="POST" style="
-      /* Just to center the form on the page */
-    margin: 0 auto;
-    width: 400px;
-    /* To see the outline of the form */
-    padding: 1em;
-    border: 1px solid #CCC;
-    border-radius: 1em;">
+      <form action="reservation" method="POST" >
         <fieldset>
-          <legend>비회원 로그인</legend>
+          <legend>예약하기</legend>
           <div id="wrapper_radio_boxes" class="wrap_input">
-            <!-- <span class="label_input">스튜디오 번호 :</span><br> -->
             <div class="wrap_radio">
               <input class="radio_studio1" type="radio" name="number" value="1" checked onchange="deleteBtn()" />Studio1
               <input class="radio_studio2" type="radio" name="number" value="2" onchange="deleteBtn()" />Studio2
@@ -54,7 +41,6 @@
             <span class="focus_input"></span>
           </div>
           <div class="wrap_input">
-            <!-- <span class="label_input">요일 :</span><br> -->
             <select id="input_day" class="day_info" name="day" onchange="deleteBtn()" required>
               <option value="" disabled selected style="color:gray">요일을 선택하세요</option>
               <option value="monday">월요일</option>
@@ -69,7 +55,6 @@
 
           </div>
           <div class="wrap_input">
-            <!-- <span class="label_input">시간 :</span><br> -->
             <select id="input_hour" class="hour_info" name="hour" onchange="deleteBtn()" required>
               <option value="" disabled selected style="color:gray">시간을 선택하세요</option>
               <optgroup label="오전">
@@ -105,19 +90,16 @@
 
           </div>
           <div class="wrap_input">
-            <!--  <span class="label_input">아이디 :</span> -->
             <input id="input_user_id" class="user_id_info" type="text" name="userId" placeholder="아이디" maxlength="15" required>
             <span class="focus_input"></span>
           </div>
 
           <div class="wrap_input">
-            <!--  <span class="label_input">비밀번호 :</span>  -->
             <input id="input_user_pw" class="user_pw_info" type="password" name="userPw" onchange="deleteBtn()" placeholder="비밀번호" maxlength="15" required>
             <span class="focus_input"></span>
           </div>
 
           <div class="wrap_input">
-            <!-- <span class="label_input">비밀번호 확인 :</span> -->
             <input id="input_user_pw_check" class="user_pw_check" type="password" onchange="deleteBtn()" placeholder="비밀번호 확인" maxlength="15" required>
             <span class="focus_input"></span>
           </div>

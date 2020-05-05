@@ -30,6 +30,34 @@
 
 
 
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 15px;
+  position: relative;
+
+}
+
+header {
+	height:150px;text-align:center;vertical-align:middle;position:relative;
+}
+
+header nav {
+	 position:absolute;top:0px;right:0px;
+}
+
+header .logo_42 {
+  width: 8%;
+  
+  height: 100px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  margin-left:50px;
+}
+
 #main_title {
 	text-align:center;
 	vertical-align: middle;
@@ -54,26 +82,15 @@ header nav div {
 	cursor: pointer;
 }
 
-.container {
-  width: 100%;
-  min-height: 100vh;
-  /*display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;*/
-  padding: 15px;
-  position: relative;
-  
-  /*background: #dc4646;
-  background: -webkit-linear-gradient(45deg, #efdcdc, #dc4646);
-  background: -o-linear-gradient(45deg, #efdcdc, #dc4646);
-  background: -moz-linear-gradient(45deg, #efdcdc, #dc4646);
-  background: linear-gradient(45deg, #efdcdc, #dc4646);
-*/
+form {
+
+      /* Just to center the form on the page */
+    margin: 0 auto;
+    width: 400px;
+    /* To see the outline of the form */
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
 }
 
 legend {
@@ -114,8 +131,10 @@ legend {
 	display:inline-block;
 	margin-left:15%;
 	font-family: Baloo2-Medium, "Comic Sans MS";
+	font-size:1.1em;
 	
 }
+
 
 .wrap_input > input {
   outline: none;
@@ -138,6 +157,7 @@ input:focus {
 
 input[type="radio"]{
   margin: 0 20px 0 20px;
+
   
 }
 
@@ -176,7 +196,7 @@ input[type="radio"]{
 	
 }
 .btn_area .available {
-	width:150px;
+	width:180px;
 	height:50px;
 	background-color: #eacccc;
 	display:inline-block;

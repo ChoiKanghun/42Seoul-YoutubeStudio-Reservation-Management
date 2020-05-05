@@ -6,6 +6,10 @@ function addTableHtml(oReq){
 	var async_table = document.querySelector(".async_table");
 	var sourceHTML = document.querySelector("#dayList").innerHTML;
 	var resultHTML = "";
+	
+	//clear all contents
+	async_table.innerHTML = "";
+	
 	for (var i = 0; i < json.studios.length; i++){
 		if (i == 0){
 			resultHTML += "<tr>" +
@@ -58,8 +62,11 @@ for (var i = 0; i < studio_btn_lst.length ; i++){
 			snum = evt.target.dataset.snum;
 		}
 		
-		//clear all contents
-		async_table.innerHTML="";
+		//when client click fast in succession
+		if (snum == '1' && document.querySelector(".studio1_status").style.backgroundColor == '#02c4c7')
+			return;
+		if (snum == '2' && document.querySelector(".studio2_status").style.backgroundColor == '#02c4c7')
+			return;
 		
 		//change studio div's background-color
 		if (snum == '1'){

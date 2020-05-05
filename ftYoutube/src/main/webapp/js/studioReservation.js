@@ -2,7 +2,12 @@ var btn_submit = document.querySelector("#btn_submit");
 var when_available = document.querySelector(".availability");
 var avail = document.querySelector(".available");
 
-
+//prevent enter key
+document.addEventListener('keydown', function(event) {
+	  if (event.keyCode === 13) {
+	    event.preventDefault();
+	  };
+	}, true);
 
 function check_password(){
 	var pw_info = document.querySelector(".user_pw_info").value;
@@ -89,8 +94,8 @@ function submit_ajax(url){
 	
 	oReq.setRequestHeader = ("Content-type", "application/json");
 	oReq.responseType = "text";
+	window.alert("예약 되었습니다!")
 	oReq.addEventListener('load', function(){
-		window.alert("예약 되었습니다!")
 	});
 	oReq.send();
 }
