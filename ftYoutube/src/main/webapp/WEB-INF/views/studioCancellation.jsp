@@ -5,7 +5,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Insert title here</title>
+  <title>Studio Cancellation</title>
   <link href="css/studioCancellation.css" rel="stylesheet" type="text/css" />
   <link href="css/studioCancellation-media.css" rel="stylesheet" type="text/css" media="screen and (min-width: 359px) and (max-width:1024px)"/>
 

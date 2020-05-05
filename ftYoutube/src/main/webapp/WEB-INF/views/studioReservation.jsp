@@ -5,7 +5,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Insert title here</title>
+  <title>Studio Reservation</title>
   <link href="css/studioReservation.css" rel="stylesheet" type="text/css" />
   <link href="css/studioReservation-media.css" rel="stylesheet" type="text/css" media="screen and (min-width: 359px) and (max-width:1024px)"/>
 

@@ -4,7 +4,7 @@
 <html>
 
 <head>
-  <title>test</title>
+  <title>42 Youtube Studio</title>
   <meta charset="utf-8">
 <link href="css/studio-media.css" rel ="stylesheet" type="text/css" media="screen and (min-width: 359px) and (max-width:1024px)">
 
