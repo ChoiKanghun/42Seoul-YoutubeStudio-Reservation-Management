@@ -7,7 +7,7 @@ document.addEventListener('keydown', function(event) {
 	  if (event.keyCode === 13) {
 	    event.preventDefault();
 	  };
-	}, true);
+}, true);
 
 function check_password(){
 	var pw_info = document.querySelector(".user_pw_info").value;
