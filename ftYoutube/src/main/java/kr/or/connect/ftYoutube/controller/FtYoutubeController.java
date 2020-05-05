@@ -16,9 +16,9 @@ public class FtYoutubeController {
 	@Autowired
 	FtYoutubeService ftYoutubeService; 
 	
-	@GetMapping(path="/studio1")
-	public String studio1() {
-		return "studio1";
+	@GetMapping(path="/studio")
+	public String studio() {
+		return "studio";
 	}
 	
 	@GetMapping(path="/reservation")
