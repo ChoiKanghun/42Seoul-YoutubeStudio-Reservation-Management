@@ -13,12 +13,26 @@
 <body>
 
   <div class="container">
-    <div class="to_home" onclick="location.href='studio1'">
+  <header id = "header" style="height:150px;text-align:center;vertical-align:middle;position:relative;">
+
+    <nav style="position:absolute;top:0px;right:0px;">
+
+    <div class="to_reservation" onclick="location.href='reservation'">
+      <p>예약하기</p>
+    </div>
+    <div class="to_home" onclick="location.href='cancellation'">
+      <p>예약취소</p>
+    </div>
+    </nav>
+      <div id="main_title"><p><b>42 SEOUL Youtube Studio 예약 시스템</b><p></div>
+    <img src="img/42.png" alt="42_logo" style="width:100px;position:absolute;left:0px;top:0px;" />
+  </header>
+    <!-- <div class="to_home" onclick="location.href='studio1'">
       <p>홈으로</p>
     </div>
     <div class="to_reservation" onclick="location.href='reservation'">
       <p>예약하기</p>
-    </div>
+    </div> -->
     <div class="wrap_content">
       <form action="cancellation" method="POST" style="
       /* Just to center the form on the page */

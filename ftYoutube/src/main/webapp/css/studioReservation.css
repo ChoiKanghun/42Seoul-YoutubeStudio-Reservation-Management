@@ -18,24 +18,54 @@
 	src: url('../fonts/Nanum_Gothic_Coding/NanumGothicCoding-Regular.ttf');
 }
 
+@font-face {
+  font-family: NanumGothic-ExtraBold;
+  src: url('../fonts/Nanum_Gothic/NanumGothic-ExtraBold.ttf');
+}
+
+@font-face {
+  font-family: NanumGothic-Bold;
+  src: url('../fonts/Nanum_Gothic/NanumGothic-Bold.ttf');
+}
+
+
 .container {
   width: 100%;
   min-height: 100vh;
-  display: -webkit-box;
+   /*display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: center;*/
   padding: 15px;
-  background: #38e49d;
-  background: -webkit-linear-gradient(45deg, #d8c9c9, #38e49d);
-  background: -o-linear-gradient(45deg, #d8c9c9, #38e49d);
-  background: -moz-linear-gradient(45deg, #d8c9c9, #38e49d);
-  background: linear-gradient(45deg, #d8c9c9, #38e49d);
   position: relative;
+}
+
+#main_title {
+	text-align:center;
+	vertical-align: middle;
+	font-size:2.2em;
+}
+
+#main_title p {
+	line-height: 4.5em;
+	font-family: NanumGothic-ExtraBold;
+}
+
+header nav div {
+	border: none;
+	width: 100px;
+	height: 70px;
+	background-color: none;
+	font-size:15px;
+	color: #a99c9c;
+	font-family: NanumGothic-ExtraBold;
+	display: inline-block;
+	border-radius: 1em;
+	cursor: pointer;
 }
 
 legend {
@@ -44,6 +74,9 @@ legend {
 
 
 .wrap_content{
+	        margin: 0 auto; 
+
+	
   width: 500px;
   background: #fff;
   border-radius: 10px;
@@ -204,6 +237,8 @@ select:-ms-input-placeholder { color: #adadad;}
 
 
 /* 나중에 추가 */
+/*
+
 .container .to_home, .to_cancellation {
 	width:70px;
 	height:70px;
@@ -217,7 +252,7 @@ select:-ms-input-placeholder { color: #adadad;}
 
 }
 
-.container .to_home {
+ .container .to_home {
 	right:10%;	
 	
 }
@@ -229,7 +264,7 @@ select:-ms-input-placeholder { color: #adadad;}
 .container .to_home, .to_cancellation p {
 	line-height:38px;
 	font-family: Jua-Regular;
-	
+	 */
 }
 
 
