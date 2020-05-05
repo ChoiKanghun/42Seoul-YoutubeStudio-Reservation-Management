@@ -35,7 +35,7 @@
   background: -o-linear-gradient(45deg, #d8c9c9, #38e49d);
   background: -moz-linear-gradient(45deg, #d8c9c9, #38e49d);
   background: linear-gradient(45deg, #d8c9c9, #38e49d);
-
+  position: relative;
 }
 
 legend {
@@ -203,34 +203,37 @@ select::-moz-placeholder { color: #adadad;}
 select:-ms-input-placeholder { color: #adadad;}
 
 
+/* 나중에 추가 */
+.container .to_home, .to_cancellation {
+	width:70px;
+	height:70px;
+	border-radius: 50%;
+	background-color: gray;
+	position: absolute;
+	text-align:center;
+	vertical-align: middle;
+	cursor:pointer;
+	top:5%;
 
-
-
-
-
-
-
-
-/*
-form div + div {
-    margin-top: 1em;
 }
 
-label {
-    // To make sure that all label have the same size and are properly align 
-    display: inline-block;
-    width: 120px;
-    text-align: right;
+.container .to_home {
+	right:10%;	
+	
 }
 
-input {
-   // To make sure that all text fields have the same font settings
-   // By default, textareas have a monospace font 
-    font: 1em sans-serif;
-
-
-
-    // To harmonize the look & feel of text field border 
-    border: 1px solid #999;
+.container .to_cancellation{
+	right:3%;
 }
-*/
+
+.container .to_home, .to_cancellation p {
+	line-height:38px;
+	font-family: Jua-Regular;
+	
+}
+
+
+
+
+
+

@@ -8,7 +8,7 @@ function check_deletable(json){
 		alert("선택하신 날짜, 시간 그리고 아이디 비밀번호를 확인해주세요!")
 	}
 	if (json.availability == "positive"){
-		when_available.innerHTML = "<img src = 'img/Bell_icon.png' style='width:10px;height:10px' /> 취소 가능합니다";
+		when_available.innerHTML = "<img src = 'img/Bell_icon.png' style='width:18px;height:18px' /> 취소 가능합니다";
 		avail.style.display = "none";
 		btn_submit.style.display = "inline-block";
 	}

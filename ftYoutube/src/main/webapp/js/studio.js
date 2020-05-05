@@ -1,4 +1,4 @@
-var studio_btn_lst = document.querySelector(".occupied").querySelector("span").querySelectorAll("div");
+var studio_btn_lst = document.querySelector(".occupied").querySelectorAll("div");
 var test = document.querySelector("#test");
 
 function addTableHtml(oReq){
@@ -8,14 +8,14 @@ function addTableHtml(oReq){
 	var resultHTML = "";
 	for (var i = 0; i < json.studios.length; i++){
 		if (i == 0){
-			resultHTML += "<tr style='border:1px solid black'>" +
-			"<td style='border:1px solid black;'>00:00</td>";
+			resultHTML += "<tr>" +
+			"<td style='font-weight:600;color:#02c4c7;width:15%'>00:00</td>";
 		}
 		else if (i % 7 == 0 ){
 			resultHTML += "</tr>";
 			async_table.insertAdjacentHTML("beforeend", resultHTML);
-			resultHTML = "<tr style = border:1px solid black;>"
-				+ "<td style='border:1px solid black;'>"
+			resultHTML = "<tr>"
+				+ "<td style='font-weight:600;color:#02c4c7;width:15%'>"
 				+ json.studios[i].hour + ":" + json.studios[i].minute
 				+ "</td>";
 		}
@@ -52,8 +52,8 @@ for (var i = 0; i < studio_btn_lst.length ; i++){
 		//event bubbling
 		if (evt.target.tagName == "SECTION"){
 			snum = evt.target.firstChild.firstChild.dataset.snum;
-		} else if (evt.target.tagName == "SPAN"){
-			snum = evt.target.firstChild.dataset.snum;
+		} else if (evt.target.tagName == "P"){
+			snum = evt.target.parentElement.dataset.snum;
 		} else{
 			snum = evt.target.dataset.snum;
 		}
@@ -61,7 +61,22 @@ for (var i = 0; i < studio_btn_lst.length ; i++){
 		//clear all contents
 		async_table.innerHTML="";
 		
+		//change studio div's background-color
+		if (snum == '1'){
+			document.querySelector(".studio1_status").style.backgroundColor = '#02c4c7';
+			document.querySelector(".studio2_status").style.backgroundColor = '#797272';
+		}
+		if (snum == '2'){
+			document.querySelector(".studio2_status").style.backgroundColor = '#02c4c7';
+			document.querySelector(".studio1_status").style.backgroundColor = '#797272';
+		}
+		
 		//sendAjax with clicked box's dataset(1 or 2)
 		sendAjax('/ftYoutube/get/studio' + snum);
 	});
 }
+
+//when dom loaded, shows studio1's info
+window.addEventListener('DOMContentLoaded', (event) => {
+	sendAjax('/ftYoutube/get/studio1');
+});

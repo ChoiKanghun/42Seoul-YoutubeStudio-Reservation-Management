@@ -30,6 +30,7 @@
   justify-content: center;
   align-items: center;
   padding: 15px;
+  position: relative;
   background: #dc4646;
   background: -webkit-linear-gradient(45deg, #efdcdc, #dc4646);
   background: -o-linear-gradient(45deg, #efdcdc, #dc4646);
@@ -202,6 +203,35 @@ select:-moz-placeholder { color: #adadad;}
 select::-moz-placeholder { color: #adadad;}
 select:-ms-input-placeholder { color: #adadad;}
 
+
+/* 나중에 추가 */
+.container .to_home, .to_reservation {
+	width:70px;
+	height:70px;
+	border-radius: 50%;
+	background-color: gray;
+	position: absolute;
+	text-align:center;
+	vertical-align: middle;
+	cursor:pointer;
+	top:5%;
+
+}
+
+.container .to_home {
+	right:10%;	
+	
+}
+
+.container .to_reservation{
+	right:3%;
+}
+
+.container .to_home, .to_reservation p {
+	line-height:38px;
+	font-family: Jua-Regular;
+	
+}
 
 
 

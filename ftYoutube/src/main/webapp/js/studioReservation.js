@@ -26,7 +26,7 @@ function check_time(json){
 		alert("선택하신 시간은 이미 예약이 되어 있습니다.")
 	}
 	if (json.availability == "positive"){
-		when_available.innerHTML = "<img src = 'img/Bell_icon.png' style='width:10px;height:10px' /> 예약 가능합니다";
+		when_available.innerHTML = "<img src = 'img/Bell_icon.png' style='width:18px;height:18px' /> 예약 가능합니다";
 		avail.style.display = "none";
 		btn_submit.style.display = "inline-block";
 	}
