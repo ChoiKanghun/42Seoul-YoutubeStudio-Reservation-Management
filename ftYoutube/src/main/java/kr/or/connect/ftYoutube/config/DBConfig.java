@@ -14,11 +14,11 @@ import org.springframework.transaction.annotation.TransactionManagementConfigure
 @EnableTransactionManagement
 public class DBConfig implements TransactionManagementConfigurer {
 
-	private String driverClassName = "com.mysql.cj.jdbc.Driver";
-	private String url = 
+	private static final String driverClassName = "com.mysql.cj.jdbc.Driver";
+	private static final String url = 
 			"jdbc:mysql://localhost:3306/ft_youtube?useUnicode=true&characterEncoding=utf8&verifyServerCertificate=false&useSSL=true&serverTimezone=UTC";
-	private String username = "ftkchoi";
-	private String password = "kchoi123!@#";
+	private static final String username = "ftkchoi";
+	private static final String password = "kchoi123!@#";
 
 	@Bean
 	public DataSource dataSource() {
