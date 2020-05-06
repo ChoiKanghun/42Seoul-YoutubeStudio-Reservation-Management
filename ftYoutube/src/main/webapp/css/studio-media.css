@@ -1,6 +1,5 @@
-
 #header {
-height: 70px;
+  height: 70px;
 }
 
 #header nav {
@@ -10,14 +9,13 @@ height: 70px;
 }
 
 #main_title {
-	display:none;
+  display: none;
 }
-
 
 #top p a img {
   width: 40px;
   height: 50px;
-}  
+}
 
 header .logo_42 {
   width: 75px;
@@ -61,10 +59,8 @@ header .logo_42 {
 .section_table {
   width: 100%;
   margin: 0px auto;
-  text-align:center;
-  
+  text-align: center;
 }
-
 
 footer {
   display: block;

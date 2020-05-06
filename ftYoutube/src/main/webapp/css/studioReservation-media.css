@@ -1,6 +1,5 @@
-
 #header {
-height: 70px;
+  height: 70px;
 }
 
 #header nav {
@@ -10,14 +9,13 @@ height: 70px;
 }
 
 #main_title {
-	display:none;
+  display: none;
 }
-
 
 #top p a img {
   width: 40px;
   height: 50px;
-}  
+}
 
 header .logo_42 {
   width: 75px;
@@ -59,50 +57,47 @@ header .logo_42 {
 }
 
 .btn_area {
-	font-family: Jua-Regular;
-	
+  font-family: Jua-Regular;
 }
 
-.btn_area .availability{
-	float:left;
-	position:relative;
-	top:10px;
-	left:5px;
-	font-family: Jua-Regular;
-	font-size:18px;
-	
+.btn_area .availability {
+  float: left;
+  position: relative;
+  top: 10px;
+  left: 5px;
+  font-family: Jua-Regular;
+  font-size: 18px;
 }
+
 .btn_area .available {
-	width:180px;
-	height:50px;
-	background-color: #02c4c7;
-	display:inline-block;
-	float:right;
-	border-radius: 2em;
-	text-align:center;
-	margin:0px auto;
-	padding-bottom:5px;
-	font-family: Jua-Regular;
-	font-size:18px;
-	
-	
+  width: 180px;
+  height: 50px;
+  background-color: #02c4c7;
+  display: inline-block;
+  float: right;
+  border-radius: 2em;
+  text-align: center;
+  margin: 0px auto;
+  padding-bottom: 5px;
+  font-family: Jua-Regular;
+  font-size: 18px;
 }
+
 .btn_area .available p {
-	font-family: Jua-Regular;
-	font-size:18px;
-	color:#f0fffa;
+  font-family: Jua-Regular;
+  font-size: 18px;
+  color: #f0fffa;
 }
 
 .btn_area button {
-	width:150px;
-	height:50px;
-	float:right;
-	outline: none !important;
-	border: none;
-	background: #02c4c7;
-	border-radius: 2em;
-	font-size:18px;
-	font-family: Jua-Regular;
-	color:#f0fffa;
-	
-}	
+  width: 150px;
+  height: 50px;
+  float: right;
+  outline: none !important;
+  border: none;
+  background: #02c4c7;
+  border-radius: 2em;
+  font-size: 18px;
+  font-family: Jua-Regular;
+  color: #f0fffa;
+}

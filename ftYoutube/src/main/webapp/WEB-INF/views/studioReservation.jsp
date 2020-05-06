@@ -7,30 +7,35 @@
   <meta charset="UTF-8">
   <title>Studio Reservation</title>
   <link href="css/studioReservation.css" rel="stylesheet" type="text/css" />
-  <link href="css/studioReservation-media.css" rel="stylesheet" type="text/css" media="screen and (min-width: 359px) and (max-width:1024px)"/>
+  <link href="css/studioReservation-media.css" rel="stylesheet" type="text/css" media="screen and (min-width: 359px) and (max-width:1024px)" />
+  <link href="css/studio-headers.css" rel="stylesheet" type="text/css" />
+  <link href="css/studio-media-ultimate-small.css" rel="stylesheet" type="text/css" media="only screen and (min-width: 1px) and (max-width:358px)">
 
 </head>
 
 <body>
   <div class="container">
-  <header id = "header" >
+    <header id="header">
 
-    <nav >
+      <nav>
 
-    <div class="to_home" onclick="location.href='studio'">
-      <p>홈으로</p>
-    </div>
-    <div class="to_cancellation" onclick="location.href='cancellation'">
-      <p>예약취소</p>
-    </div>
-    </nav>
-      <div id="main_title"><p><b>42 SEOUL Youtube Studio 예약 시스템</b><p></div>
-    <a href="studio"><img class="logo_42" src="img/42.png" alt="42_logo" /></a>
-  </header>
-  
+        <div class="to_home" onclick="location.href='studio'">
+          <p>홈으로</p>
+        </div>
+        <div class="to_cancellation" onclick="location.href='cancellation'">
+          <p>예약취소</p>
+        </div>
+      </nav>
+      <div id="main_title">
+        <p><b>42 SEOUL Youtube Studio 예약 시스템</b>
+          <p>
+      </div>
+      <a href="studio"><img class="logo_42" src="img/42.png" alt="42_logo" /></a>
+    </header>
+
 
     <div class="wrap_content">
-      <form action="reservation" method="POST" >
+      <form action="reservation" method="POST">
         <fieldset>
           <legend>예약하기</legend>
           <div id="wrapper_radio_boxes" class="wrap_input">

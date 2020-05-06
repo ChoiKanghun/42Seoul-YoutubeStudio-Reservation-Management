@@ -15,54 +15,6 @@
   position: relative;
 }
 
-header {
-  height: 150px;
-  text-align: center;
-  vertical-align: middle;
-  position: relative;
-}
-
-header nav {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-}
-
-#main_title {
-  text-align: center;
-  vertical-align: middle;
-  font-size: 2.2em;
-}
-
-#main_title p {
-  line-height: 4.5em;
-  font-family: NanumGothic-ExtraBold;
-}
-
-header .logo_42 {
-  width: 8%;
-  
-  height: 100px;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  margin-left:50px;
-}
-
-header nav div {
-  border: none;
-  width: 100px;
-  height: 70px;
-  background-color: none;
-  font-size: 15px;
-  color: #a99c9c;
-  font-family: NanumGothic-ExtraBold;
-  display: inline-block;
-  border-radius: 1em;
-  cursor: pointer;
-}
-
-
 .occupied {
   margin-bottom: 1em;
   height: 7.2em;
@@ -88,8 +40,8 @@ header nav div {
 }
 
 .occupied .studio1_status, .studio2_status {
-  width: 12em;
-  height: 6em;
+  width: 14%;
+  height: 85%;
   border-radius: 10%;
 }
 
@@ -105,8 +57,7 @@ header nav div {
 .section_table {
   width: 85%;
   margin: 0px auto;
-  text-align:center;
-  
+  text-align: center;
 }
 
 .section_table table {
