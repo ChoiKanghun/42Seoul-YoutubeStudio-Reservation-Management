@@ -28,13 +28,17 @@ https://www.edwith.org/boostcourse-web/lecture/16680/
 
 1. JDK(Java SE Development Kit)를 다운받아줍니다.
    참고 : https://www.edwith.org/boostcourse-web/lecture/16680/
+   
 2. Eclipse 홈페이지에서 'Eclipse IDE for Enterprise Java Developers (includes Incubating components)'를 다운받습니다.
+
 3.  환경설정을 해줍니다.
    윈도우 : https://newehblog.tistory.com/2
    리눅스 : https://amamongm.tistory.com/9
    맥 OS : https://m.blog.naver.com/PostView.nhn?blogId=cksdud9024&logNo=221235147362&proxyReferer=https:%2F%2Fwww.google.com%2F
+   
 4. Tomcat을 다운받아줍니다.(ver 8 정도)
    참고 : https://www.edwith.org/boostcourse-web/lecture/16684/
+   
 5. Mysql을 다운받습니다. 
    https://www.edwith.org/boostcourse-web/lecture/16717/
 
@@ -43,6 +47,7 @@ https://www.edwith.org/boostcourse-web/lecture/16680/
 6. 프로젝트 안에 있는 pom.xml을 수정합니다.  (여기서부턴 깃 클론이 되어있다는 가정)
    -> <mysql> 태그의 버전을 자신의 mysql version과 맞춥니다.
    -> mysql 버전은 cmd 창에서 mysql -V 를 입력해 알아낼 수 있습니다.
+   
 7. Mysql 계정을 생성합니다.
 
 - 루트계정접속
@@ -71,10 +76,12 @@ https://www.edwith.org/boostcourse-web/lecture/16680/
    * cmd 또는 터미널에서 깃 클론한 폴더로 이동 (ddl_youtube_studio.ddl 파일이 있는 곳)
      * MYSQL -uroot (생성한)DB명 -p < ddl_youtube_studio.sql 입력
      * MYSQL -uroot (생성한)DB명 -p < dml_youtube_studio.sql 입력
+     
 9. 이클립스 프로젝트 내에서 src - main - resources - application.properties에서 다음을 수정
    * spring.datasource.username=생성한 계정명 (스페이스 없어야 함)
    * spring.datasource.password=해당계정 비밀번호(스페이스 없어야 함)
    * spring.datasource.url=jdbc:mysql://localhost:3306/ft_youtube~ 에서 ft_youtube 부분을 생성한 db명으로.
+   
 10. Java Resources - src/main/java - kr.or.connect.ftYoutube.config 패키지 내에 있는 DBConfig를 수정합니다.
     * 해당 클래스 내의 String username과 password를 생성한 정보에 따라 수정합니다.
     * 해당 클래스 내의 url에서 "jdbc:mysql://localhost:3306/ft_youtube?~" ft_youtube 부분을 생성한 db명으로 수정합니다.
