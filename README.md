@@ -74,8 +74,10 @@ https://www.edwith.org/boostcourse-web/lecture/16680/
 9. 이클립스 프로젝트 내에서 src - main - resources - application.properties에서 다음을 수정
    * spring.datasource.username=생성한 계정명 (스페이스 없어야 함)
    * spring.datasource.password=해당계정 비밀번호(스페이스 없어야 함)
+   * spring.datasource.url=jdbc:mysql://localhost:3306/ft_youtube~ 에서 ft_youtube 부분을 생성한 db명으로.
 10. Java Resources - src/main/java - kr.or.connect.ftYoutube.config 패키지 내에 있는 DBConfig를 수정합니다.
     * 해당 클래스 내의 String username과 password를 생성한 정보에 따라 수정합니다.
+    * 해당 클래스 내의 url에서 "jdbc:mysql://localhost:3306/ft_youtube?~" ft_youtube 부분을 생성한 db명으로 수정합니다.
 
 
 
