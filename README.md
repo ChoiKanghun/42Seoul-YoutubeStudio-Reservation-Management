@@ -45,7 +45,7 @@ https://www.edwith.org/boostcourse-web/lecture/16680/
 > 공통설정
 
 6. 프로젝트 안에 있는 pom.xml을 수정합니다.  (여기서부턴 깃 클론이 되어있다는 가정)
-   -> <mysql> 태그의 버전을 자신의 mysql version과 맞춥니다.
+   -> \<mysql\> 태그의 버전을 자신의 mysql version과 맞춥니다.
    -> mysql 버전은 cmd 창에서 mysql -V 를 입력해 알아낼 수 있습니다.
    
 7. Mysql 계정을 생성합니다.
