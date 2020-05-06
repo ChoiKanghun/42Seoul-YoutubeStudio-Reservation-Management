@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ page import="java.util.Date" %>
 <!DOCTYPE html>
 <html>
 
@@ -10,6 +13,13 @@
   <link href="css/studioReservation-media.css" rel="stylesheet" type="text/css" media="screen and (min-width: 359px) and (max-width:1024px)" />
   <link href="css/studio-headers.css" rel="stylesheet" type="text/css" />
   <link href="css/studio-media-ultimate-small.css" rel="stylesheet" type="text/css" media="only screen and (min-width: 1px) and (max-width:358px)">
+<c:set var="firstday" value="<%=new Date()%>"/>
+<c:set var="secondday" value="<%=new Date(new Date().getTime() + 60*60*24*1000)%>"/>
+<c:set var="thirdday" value="<%=new Date(new Date().getTime() + 60*60*24*1000*2)%>"/>
+<c:set var="fourthday" value="<%=new Date(new Date().getTime() + 60*60*24*1000*3)%>"/>
+<c:set var="fifthday" value="<%=new Date(new Date().getTime() + 60*60*24*1000*4)%>"/>
+<c:set var="sixthday" value="<%=new Date(new Date().getTime() + 60*60*24*1000*5)%>"/>
+<c:set var="seventhday" value="<%=new Date(new Date().getTime() + 60*60*24*1000*6)%>"/>
 
 </head>
 
@@ -47,14 +57,28 @@
           </div>
           <div class="wrap_input">
             <select id="input_day" class="day_info" name="day" onchange="deleteBtn()" required>
-              <option value="" disabled selected style="color:gray">요일을 선택하세요</option>
-              <option value="monday">월요일</option>
-              <option value="tuesday">화요일</option>
-              <option value="wednesday">수요일</option>
-              <option value="thursday">목요일</option>
-              <option value="friday">금요일</option>
-              <option value="saturday">토요일</option>
-              <option value="sunday">일요일</option>
+              <option value="" disabled selected style="color:gray">취소할 날짜를 선택하세요</option>
+              <option class="firstday" value="firstday">
+                <fmt:formatDate value="${firstday}" pattern="M/dd (E)" />
+              </option>
+              <option class="secondday" value="secondday">
+                <fmt:formatDate value="${secondday}" pattern="M/dd (E)" />
+              </option>
+              <option class="thirdday" value="thirdday">
+                <fmt:formatDate value="${thirdday}" pattern="M/dd (E)" />
+              </option>
+              <option class="fourthday" value="fourthday">
+                <fmt:formatDate value="${fourthday }" pattern="M/dd (E)" />
+              </option>
+              <option class="fifthday" value="fifthday">
+                <fmt:formatDate value="${fifthday}" pattern="M/dd (E)" />
+              </option>
+              <option class="sixthday" value="sixthday">
+                <fmt:formatDate value="${sixthday}" pattern="M/dd (E)" />
+              </option>
+              <option class="seventhday" value="seventhday">
+                <fmt:formatDate value="${seventhday}" pattern="M/dd (E)" />
+              </option>
             </select>
             <span class="focus_input"></span>
 

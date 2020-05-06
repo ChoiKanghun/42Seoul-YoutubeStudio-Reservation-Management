@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ page import="java.util.Date" %>
+
 <!DOCTYPE html>
 <html>
 
@@ -10,6 +14,13 @@
   <link href="css/studio-media-ultimate-small.css" rel="stylesheet" type="text/css" media="only screen and (min-width: 1px) and (max-width:358px)">
   <link href="css/studio.css" rel="stylesheet" type="text/css" />
   <link href="css/studio-headers.css" rel="stylesheet" type="text/css" />
+<c:set var="firstday" value="<%=new Date()%>"/>
+<c:set var="secondday" value="<%=new Date(new Date().getTime() + 60*60*24*1000)%>"/>
+<c:set var="thirdday" value="<%=new Date(new Date().getTime() + 60*60*24*1000*2)%>"/>
+<c:set var="fourthday" value="<%=new Date(new Date().getTime() + 60*60*24*1000*3)%>"/>
+<c:set var="fifthday" value="<%=new Date(new Date().getTime() + 60*60*24*1000*4)%>"/>
+<c:set var="sixthday" value="<%=new Date(new Date().getTime() + 60*60*24*1000*5)%>"/>
+<c:set var="seventhday" value="<%=new Date(new Date().getTime() + 60*60*24*1000*6)%>"/>
 
 </head>
 
@@ -53,13 +64,13 @@
           <thead>
             <tr>
               <td>시간</td>
-              <td>월</td>
-              <td>화</td>
-              <td>수</td>
-              <td>목</td>
-              <td>금</td>
-              <td>토</td>
-              <td>일</td>
+              <td><fmt:formatDate value="${firstday}" pattern="M/dd (E)"/></td>
+              <td><fmt:formatDate value="${secondday}" pattern="M/dd (E)"/></td>
+              <td><fmt:formatDate value="${thirdday}" pattern="M/dd (E)"/></td>
+              <td><fmt:formatDate value="${fourthday }" pattern="M/dd (E)"/></td>
+              <td><fmt:formatDate value="${fifthday}" pattern="M/dd (E)"/></td>
+              <td><fmt:formatDate value="${sixthday}" pattern="M/dd (E)"/></td>
+              <td><fmt:formatDate value="${seventhday}" pattern="M/dd (E)"/></td>
             </tr>
           </thead>
           <tbody class="async_table">
