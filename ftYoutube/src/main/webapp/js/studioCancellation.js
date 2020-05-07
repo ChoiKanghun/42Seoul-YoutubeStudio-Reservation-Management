@@ -2,7 +2,6 @@ var btn_submit = document.querySelector("#btn_submit");
 var when_available = document.querySelector(".availability");
 var avail = document.querySelector(".available");
 
-
 function check_deletable(json){
 	if (json.availability == "negative"){
 		alert("선택하신 날짜, 시간 그리고 아이디 비밀번호를 확인해주세요!")
