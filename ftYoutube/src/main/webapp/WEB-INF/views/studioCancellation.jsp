@@ -49,7 +49,7 @@
     <div class="wrap_content">
       <form action="cancellation" method="POST">
         <fieldset>
-          <legend>예약 삭제하기</legend>
+          <legend>예약 취소하기</legend>
           <div id="wrapper_radio_boxes" class="wrap_input">
             <div class="wrap_radio">
               <input class="radio_studio1" type="radio" name="number" value="1" checked onchange="deleteBtn()" />Studio1
