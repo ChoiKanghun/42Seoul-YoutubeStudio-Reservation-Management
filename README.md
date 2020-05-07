@@ -1,3 +1,8 @@
+### Note
+
+현재 다음 주소로 임시 서버를 열어두었습니다.
+임시서버라 느리고 제가 노트북을 켰을 때만 접속이 가능합니다. ㅠ
+http://5d1cade8.jp.ngrok.io/ftYoutube
 
 
 # 프로젝트명
@@ -115,10 +120,6 @@ intra ID : kchoi
 Email me : rkdgns4562@naver.com
 
 
-### Note
 
-현재 다음 주소로 임시 서버를 열어두었습니다.
-임시서버라 느리고 제가 노트북을 켰을 때만 접속이 가능합니다. ㅠ
-http://d9de4af7.ngrok.io/ftYoutube
 
 
