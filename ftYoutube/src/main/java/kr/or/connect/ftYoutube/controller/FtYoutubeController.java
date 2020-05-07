@@ -45,8 +45,7 @@ public class FtYoutubeController {
 	@PostMapping(path="/post_reservation")
 	public String reservationPost(@ModelAttribute Studio studio,
 			@RequestParam(name="number", required = true) int number) {
-		//select해서 해당 칸에 user_id가 존재하면 "fail"리턴.
-		//user_id가 '-'라면 insert 후 "success"리턴.
+		
 		Studio selectUserId = ftYoutubeService.selectByDayHour(studio, number);
 		if (selectUserId.getUserId() != null) {
 
@@ -56,5 +55,15 @@ public class FtYoutubeController {
 
 		}
 		return ("redirect:reservation");
+	}
+	
+	@GetMapping(path="/firefox_reservation")
+	public String firefox_reservation() {
+		return ("redirect:studio");
+	}
+	
+	@GetMapping(path="/testpage")
+	public String test() {
+		return "testpage";
 	}
 }

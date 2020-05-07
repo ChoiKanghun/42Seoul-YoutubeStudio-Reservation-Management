@@ -109,7 +109,5 @@ public class FtYoutubeAPIController {
 		map.put("deleteCount", deleteCount);
 		
 		return map;
-		
 	}
-	
 }

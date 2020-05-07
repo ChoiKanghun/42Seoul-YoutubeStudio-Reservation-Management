@@ -153,6 +153,6 @@
   </script>
 </body>
 <script src="js/password_hashing.js"></script>
-<script src="js/studioCancellation.js"></script>
+<script src="js/studioCancellation.js?ver=1.1"></script>
 
 </html>

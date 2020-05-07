@@ -1,11 +1,29 @@
+//Check the browser. If the browser's firefox, redirect to home.
+window.addEventListener('DOMContentLoaded', (evt) => {
+	var userAgent = navigator.userAgent.toLowerCase();
+	
+	if(userAgent.indexOf('firefox') > -1)
+	{
+		window.alert("Firefox 브라우저는 지원하지 않습니다.");
+		var oReq = new XMLHttpRequest;
+		oReq.open('GET', "/ftYoutube/firefox_reservation");
+		oReq.setRequestHeader = ("Content-type", "application/json");
+		oReq.responseType = "text";
+		oReq.send();
+	}
+
+});
+
+
 var btn_submit = document.querySelector("#btn_submit");
 var when_available = document.querySelector(".availability");
 var avail = document.querySelector(".available");
 
 //prevent enter key
-document.addEventListener('keydown', function(event) {
-	  if (event.keyCode === 13) {
-	    event.preventDefault();
+document.addEventListener('keydown', function(evt) {
+
+	  if (evt.keyCode === 13) {
+	    evt.preventDefault();
 	  };
 }, true);
 
@@ -96,7 +114,6 @@ avail.addEventListener('click', function(){
 function submit_ajax(url){
 	var oReq = new XMLHttpRequest;
 	oReq.open('POST', url);
-	
 	oReq.setRequestHeader = ("Content-type", "application/json");
 	oReq.responseType = "text";
 	window.alert("예약 되었습니다!")

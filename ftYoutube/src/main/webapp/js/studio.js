@@ -89,6 +89,6 @@ for (var i = 0; i < studio_btn_lst.length ; i++){
 }
 
 //when dom loaded, shows studio1's info
-window.addEventListener('DOMContentLoaded', (event) => {
+window.addEventListener('DOMContentLoaded', (evt) => {
 	sendAjax('/ftYoutube/get/studio1');
 });

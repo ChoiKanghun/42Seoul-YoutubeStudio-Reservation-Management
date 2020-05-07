@@ -147,7 +147,7 @@
     </div>
   </div>
 </body>
-<script src="js/studioReservation.js"></script>
+<script src="js/studioReservation.js?ver=1.1"></script>
 <script>
   function deleteBtn() {
     document.querySelector("#btn_submit").style.display = "none";
