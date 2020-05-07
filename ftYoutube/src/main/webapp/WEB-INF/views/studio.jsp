@@ -64,7 +64,10 @@
           <thead>
             <tr>
               <td>시간</td>
-              <td><fmt:formatDate value="${firstday}" pattern="M/dd (E)"/></td>
+              <td class="table-head-today">
+              <fmt:formatDate value="${firstday}" pattern="M/dd (E)"/>
+              <br>today
+              </td>
               <td><fmt:formatDate value="${secondday}" pattern="M/dd (E)"/></td>
               <td><fmt:formatDate value="${thirdday}" pattern="M/dd (E)"/></td>
               <td><fmt:formatDate value="${fourthday }" pattern="M/dd (E)"/></td>
