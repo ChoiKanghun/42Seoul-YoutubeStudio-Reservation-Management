@@ -1,6 +1,7 @@
 var studio_btn_lst = document.querySelector(".occupied").querySelectorAll("div");
 var test = document.querySelector("#test");
 
+//the function adds table info with json.responseText
 function addTableHtml(oReq){
 	var json = JSON.parse(oReq.responseText);
 	var async_table = document.querySelector(".async_table");
@@ -11,10 +12,12 @@ function addTableHtml(oReq){
 	async_table.innerHTML = "";
 	
 	for (var i = 0; i < json.studios.length; i++){
+		//initialize
 		if (i == 0){
 			resultHTML += "<tr>" +
 			"<td style='font-weight:600;color:#02c4c7;width:15%'>00:00</td>";
 		}
+		//when it encounters first day
 		else if (i % 7 == 0 ){
 			resultHTML += "</tr>";
 			async_table.insertAdjacentHTML("beforeend", resultHTML);
@@ -27,6 +30,8 @@ function addTableHtml(oReq){
 			.replace("{user_id}", json.studios[i].userId);
 	}
 	resultHTML += "</tr>";
+	
+	//adds before end of async_table
 	async_table.insertAdjacentHTML("beforeend", resultHTML);
 	
 }

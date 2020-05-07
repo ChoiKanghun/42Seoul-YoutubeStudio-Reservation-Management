@@ -9,6 +9,7 @@ document.addEventListener('keydown', function(event) {
 	  };
 }, true);
 
+//check if both password and password_check string is identical
 function check_password(){
 	var pw_info = document.querySelector(".user_pw_info").value;
 	var pw_check = document.querySelector(".user_pw_check").value;
@@ -25,6 +26,7 @@ function check_password(){
 	
 }
 
+//check if time is available
 function check_time(json){
 	when_available.innerHTML = "";
 	if (json.availability == "negative"){
@@ -37,6 +39,7 @@ function check_time(json){
 	}
 }
 
+//send ajax
 function check_pw_ajax(url){
 	var oReq = new XMLHttpRequest;
 	oReq.open('GET', url);
@@ -69,10 +72,12 @@ avail.addEventListener('click', function(){
 		number = radio_studio2.value;
 	}
 	
+	//if day or hour is null
 	if (day == "" || hour == ""){
 		window.alert("날짜와 시간을 지정해주세요 !");
 		return ;
 	}
+	//if user_id or user_pw is null
 	if (user_id == "" || user_pw == "" || user_pw_checked == ""){
 		window.alert("아이디와 비밀번호를 입력해주세요 !");
 		return ;
@@ -100,6 +105,8 @@ function submit_ajax(url){
 	oReq.send();
 }
 
+//send url to ajax event with form info
+//user_pw will be encrypted with SHA256
 btn_submit.addEventListener('click', function(){
 	var radio_studio1 = document.querySelector(".radio_studio1");
 	var radio_studio2 = document.querySelector(".radio_studio2");

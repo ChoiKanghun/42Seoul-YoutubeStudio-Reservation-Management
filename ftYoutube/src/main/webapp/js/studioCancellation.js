@@ -14,6 +14,8 @@ function check_deletable(json){
 	}
 }
 
+//gets user_id and user_pw
+//check if client's cancellation request is available
 function check_ajax(url){
 	var oReq = new XMLHttpRequest;
 	oReq.open('GET', url);
@@ -28,7 +30,7 @@ function check_ajax(url){
 	oReq.send();
 }
 
-//check if chosen time is available
+//check if chosen time is cancel-able
 avail.addEventListener('click', function(){
 	var radio_studio1 = document.querySelector(".radio_studio1");
 	var radio_studio2 = document.querySelector(".radio_studio2");
@@ -45,10 +47,12 @@ avail.addEventListener('click', function(){
 		number = radio_studio2.value;
 	}
 	
+	//if day or hour is null
 	if (day == "" || hour == ""){
 		window.alert("날짜와 시간을 지정해주세요 !");
 		return ;
 	}
+	//if user_id or user_pw is null
 	if (user_id == "" || user_pw == ""){
 		window.alert("아이디와 비밀번호를 입력해주세요 !");
 		return ;
@@ -64,6 +68,8 @@ avail.addEventListener('click', function(){
  * >>>>>>>>>>>>>>>>>>  on btn click send post >>>>>>>>>
  */
 
+
+//set user_id and user_pw 'null' with client's request.
 function submit_ajax(url){
 	var oReq = new XMLHttpRequest;
 	oReq.open('POST', url);
@@ -78,6 +84,8 @@ function submit_ajax(url){
 	oReq.send();
 }
 
+//send url to ajax event with form info
+//it converts the client's password to encrypted String with SHA256
 btn_submit.addEventListener('click', function(){
 	var radio_studio1 = document.querySelector(".radio_studio1");
 	var radio_studio2 = document.querySelector(".radio_studio2");
