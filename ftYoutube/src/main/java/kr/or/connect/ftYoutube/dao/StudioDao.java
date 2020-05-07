@@ -2,9 +2,11 @@ package kr.or.connect.ftYoutube.dao;
 
 import static kr.or.connect.ftYoutube.dao.DaoSqls.CHECK_DELETABLE;
 import static kr.or.connect.ftYoutube.dao.DaoSqls.DELETE_STUDIO;
+import static kr.or.connect.ftYoutube.dao.DaoSqls.REMOVE_FIRST_DAY;
 import static kr.or.connect.ftYoutube.dao.DaoSqls.SELECT_ALL_STUDIO_ONE;
 import static kr.or.connect.ftYoutube.dao.DaoSqls.SELECT_ALL_STUDIO_TWO;
 import static kr.or.connect.ftYoutube.dao.DaoSqls.SELECT_BY_DAY_HOUR;
+import static kr.or.connect.ftYoutube.dao.DaoSqls.STUDIO_DAY_MOVE;
 import static kr.or.connect.ftYoutube.dao.DaoSqls.UPDATE_BY_DAY_HOUR;
 
 import java.util.Collections;
@@ -91,5 +93,25 @@ public class StudioDao {
 		params.put("userPw", studio.getUserPw());
 
 		return jdbc.update(DELETE_STUDIO, params);
+	}
+	
+	
+	//make days one-day-back.
+	//For example, secondday->firstday, thirdday->secondday and so on.
+	public int studioDayMove(Integer snum, Integer idPrior, Integer idLater) {
+		Map<String, Object> params = new HashMap<>();
+		params.put("snum", snum);
+		params.put("idPrior", idPrior);
+		params.put("idLater", idLater);
+		
+		return jdbc.update(STUDIO_DAY_MOVE, params);
+	}
+	
+	//set user_id =null, user_pw = null condition: day='firstday'
+	public int removeFirstDay(Integer snum) {
+		Map<String, Object> params = new HashMap<>();
+		params.put("snum", snum);
+		
+		return jdbc.update(REMOVE_FIRST_DAY, params);
 	}
 }

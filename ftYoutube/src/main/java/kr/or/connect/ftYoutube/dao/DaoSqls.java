@@ -28,6 +28,17 @@ public class DaoSqls {
 	public static final String DELETE_STUDIO
 		= "UPDATE studio:snum SET user_id = null, user_pw = null WHERE day =:day and hour = :hour and user_id =:userId and user_pw =:userPw";
 
+//make days one-day-back.
+//For example, secondday->firstday, thirdday->secondday and so on.
+	public static final String STUDIO_DAY_MOVE
+		= "UPDATE studio:snum AS s1, studio:snum AS s2 "
+				+ "SET s1.user_id = s2.user_id, s1.user_pw = s2.user_pw "
+				+ "WHERE (s1.id=:idPrior) AND (s2.id=:idLater)";
+
+//delete user_id, user_pw WHERE day='firstday'
+	public static final String REMOVE_FIRST_DAY
+		= "UPDATE studio:snum SET user_id=null, user_pw=null "
+			+ "WHERE day='seventhday'";
 
 }
 
