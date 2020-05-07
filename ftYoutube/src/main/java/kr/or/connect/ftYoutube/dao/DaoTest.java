@@ -13,8 +13,5 @@ public class DaoTest {
 		System.out.println("hi Im ac getBean");
 
 		
-		StudioDao studioDao = ac.getBean(StudioDao.class);
-
-
-
+	}
 }
