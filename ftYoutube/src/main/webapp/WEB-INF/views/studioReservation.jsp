@@ -57,7 +57,7 @@
           </div>
           <div class="wrap_input">
             <select id="input_day" class="day_info" name="day" onchange="deleteBtn()" required>
-              <option value="" disabled selected style="color:gray">취소할 날짜를 선택하세요</option>
+              <option value="" disabled selected style="color:gray">예약할 날짜를 선택하세요</option>
               <option class="firstday" value="firstday">
                 <fmt:formatDate value="${firstday}" pattern="M/dd (E)" />
               </option>

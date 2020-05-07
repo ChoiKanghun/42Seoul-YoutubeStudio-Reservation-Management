@@ -87,7 +87,7 @@
           </div>
           <div class="wrap_input">
             <select id="input_hour" class="hour_info" name="hour" onchange="deleteBtn()" required>
-              <option value="" disabled selected style="color:gray">취소할 시간을 선택하세요</option>
+              <option value="" disabled selected style="color:gray">시간을 선택하세요</option>
               <optgroup label="오전">
                 <option value="00">00:00</option>
                 <option value="01">01:00</option>
