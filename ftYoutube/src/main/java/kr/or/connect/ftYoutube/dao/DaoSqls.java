@@ -38,7 +38,7 @@ public class DaoSqls {
 //delete user_id, user_pw WHERE day='firstday'
 	public static final String REMOVE_FIRST_DAY
 		= "UPDATE studio:snum SET user_id=null, user_pw=null "
-			+ "WHERE day='seventhday' ";
+			+ " WHERE day='seventhday' ";
 
 }
 
