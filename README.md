@@ -116,7 +116,7 @@ SHA256처리는 Javascript로 처리하여 서버로 넘어오기 전에 암호�
 
 다음 링크에서 확인하세요 : )
 
-https://youtu.be/hOrDHn94XXI
+https://www.youtube.com/watch?v=DsO9Owd61q8
 
 
 
