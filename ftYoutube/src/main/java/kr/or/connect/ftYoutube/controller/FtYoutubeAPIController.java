@@ -35,7 +35,6 @@ public class FtYoutubeAPIController {
 			List<Studio> studios = ftYoutubeService.getAllStudioTwo();
 			map.put("studios", studios);
 		}
-		
 		return map;
 	}
 	
@@ -87,7 +86,6 @@ public class FtYoutubeAPIController {
 			e.printStackTrace();
 			map.put("availability", "negative");
 		}
-		
 		return map;
 	}
 	
@@ -105,7 +103,6 @@ public class FtYoutubeAPIController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println(studio);
 		map.put("deleteCount", deleteCount);
 		
 		return map;
