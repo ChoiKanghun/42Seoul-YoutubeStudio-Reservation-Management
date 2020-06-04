@@ -10,25 +10,26 @@
 </head>
 
 <body>
+
+<form method = 'POST' action = "https://api.intra.42.fr/oauth/token">
+<input name = "grant_type" placeholder="grant_type">
+<input name = "client_id" placeholder = "client_id">
+<input name = "client_secret" placeholder = "client_secret">
+<input name = "code" placeholder = "code">
+<input name = "redirect_uri" placeholder="redirect_uri">
+<button type="submit">button</button>
+</form>
+
+<form method = 'GET' action = "https://api.intra.42.fr/v2/me">
+
+
+
+</form>
+
 </body>
 
 <script>
-var userAgent=navigator.userAgent.toLowerCase();
 
-var browser;
-if(userAgent.indexOf('edge')>-1){
-	browser='익스플로러 엣지';
-}else if(userAgent.indexOf('whale')>-1){
-	browser='네이버 웨일';
-}else if(userAgent.indexOf('chrome')>-1){
-	browser='크롬';
-}else if(userAgent.indexOf('firefox')>-1){
-	browser='파이어폭스';
-}else{
-	browser='익스플로러';
-}
-
-document.write(browser);
 
 
 

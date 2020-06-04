@@ -40,7 +40,7 @@
         <p><b>42 SEOUL Youtube Studio 예약 시스템</b>
           <p>
       </div>
-      <a href="studio"><img class="logo_42" src="img/42.png" alt="42_logo" /></a>
+      <a href="studio"><img class="logo_42" src="img/42.PNG" alt="42_logo" /></a>
     </header>
 
 

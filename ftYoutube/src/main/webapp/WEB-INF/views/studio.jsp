@@ -43,7 +43,7 @@
           <p>
       </div>
       <a href="studio">
-        <img class="logo_42" src="img/42.png" alt="42_logo" />
+        <img class="logo_42" src="img/42.PNG" alt="42_logo" />
       </a>
     </header>
 

@@ -1,5 +1,7 @@
 package kr.or.connect.ftYoutube.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,8 +18,24 @@ public class FtYoutubeController {
 	@Autowired
 	FtYoutubeService ftYoutubeService; 
 	
+	@GetMapping(path="/")
+	public String index(
+			@RequestParam(name="code", required=false)String code,
+			HttpServletRequest request) {
+		if(code != null)
+			System.out.println(code);
+		System.out.println(request);
+			return "studio";
+	}
+	
 	@GetMapping(path="/studio")
-	public String studio() {
+	public String studio(
+			@RequestParam(name="code", required=false)String code,
+			HttpServletRequest request) {
+		
+	if(code != null)
+		System.out.println(code);
+	System.out.println(request);
 		return "studio";
 	}
 	
