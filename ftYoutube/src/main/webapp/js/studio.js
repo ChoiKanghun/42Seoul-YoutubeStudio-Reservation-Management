@@ -1,8 +1,56 @@
 var studio_btn_lst = document.querySelector(".occupied").querySelectorAll("div");
 var test = document.querySelector("#test");
 
+function addReserveEvent(json, snum) {
+	
+	var tableDatas = document.querySelectorAll(".tableData");
+	tableDatas.forEach(function(tableData, index) {
+		var intraId = document.querySelector("#loginInfo").dataset.login;
+		var url = "get/studio?";
+		
+		tableData.addEventListener("click", function(){
+			var oReq = new XMLHttpRequest;
+			var queryString;
+			
+			queryString = 
+				"number=" + snum + "&"
+				+ "hour=" + tableData.dataset.hour + "&"
+				+ "day=" + tableData.dataset.day;
+			if (intraId !== "로그인하기") {
+				queryString += "&intraId=" + intraId;
+			}
+			url += queryString;
+			oReq.open('GET', url);
+			oReq.setRequestHeader = ("Content-type", "application/json");
+			oReq.responseType = "text";
+			oReq.addEventListener('load', function(){
+				if ("fail" === this.responseText) {
+					alert("로그인을 하지 않았거나 다른 사람이 이미 예약했습니다.");
+				} else {
+					sendAjax('/ftYoutube/get/studio' + snum, snum);
+				}
+			});
+			oReq.send(queryString);
+		})
+	})
+}
+
+function getDay(index) {
+	var divided = (index % 7);
+	
+	switch (divided) {
+		case 0 : return "firstday";
+		case 1 : return "secondday";
+		case 2 : return "thirdday";
+		case 3 : return "fourthday";
+		case 4 : return "fifthday";
+		case 5 : return "sixthday";
+		case 6 : return "seventhday";
+	}
+	alert("no match index");
+}
 //the function adds table info with json.responseText
-function addTableHtml(oReq){
+function addTableHtml(oReq, snum){
 	var json = JSON.parse(oReq.responseText);
 	var async_table = document.querySelector(".async_table");
 	var sourceHTML = document.querySelector("#dayList").innerHTML;
@@ -13,7 +61,7 @@ function addTableHtml(oReq){
 	
 	for (var i = 0; i < json.studios.length; i++){
 		//initialize
-		if (i == 0){
+		if (i == 0) {
 			resultHTML += "<tr>" +
 			"<td style='font-weight:600;color:#02c4c7;width:15%'>00:00</td>";
 		}
@@ -27,23 +75,26 @@ function addTableHtml(oReq){
 				+ "</td>";
 		}
 		resultHTML += sourceHTML
-			.replace("{user_id}", json.studios[i].userId);
+			.replace("{user_id}", json.studios[i].userId)
+			.replace("{day}", getDay(i))
+			.replace("{hour}", json.studios[i].hour);
 	}
 	resultHTML += "</tr>";
 	
 	//adds before end of async_table
 	async_table.insertAdjacentHTML("beforeend", resultHTML);
 	
+	addReserveEvent(json, snum);
 }
 
 //sends Ajax to get json from REST API Controller
-function sendAjax(url){
+function sendAjax(url, snum){
 	var oReq = new XMLHttpRequest;
 	oReq.open('GET', url);
 	oReq.setRequestHeader = ("Content-type", "application/json");
-	oReq.responseType = "text";
+	oReq.responseType = "text";	
 	oReq.addEventListener('load', function(){
-		addTableHtml(this);
+		addTableHtml(this, snum);
 	});
 	oReq.send();
 }
@@ -84,11 +135,11 @@ for (var i = 0; i < studio_btn_lst.length ; i++){
 		}
 		
 		//sendAjax with clicked box's dataset(1 or 2)
-		sendAjax('/ftYoutube/get/studio' + snum);
+		sendAjax('/ftYoutube/get/studio' + snum, snum);
 	});
 }
 
 //when dom loaded, shows studio1's info
 window.addEventListener('DOMContentLoaded', (evt) => {
-	sendAjax('/ftYoutube/get/studio1');
+	sendAjax('/ftYoutube/get/studio1', 1);
 });
