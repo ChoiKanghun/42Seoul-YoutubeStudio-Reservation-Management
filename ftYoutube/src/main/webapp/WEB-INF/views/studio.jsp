@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ page import="java.util.Date" %>
-
+<%@ page import="java.util.*" %>
 <!DOCTYPE html>
 <html>
 
@@ -25,18 +25,25 @@
 </head>
 
 <body>
+	<div id="loginInfo" style="display:none" data-login="${login }"></div>  
   <div class="container">
-
     <header id="header">
 
       <nav>
-
-        <div class="to_reservation" onclick="location.href='reservation'">
-          <p>예약하기</p>
+	<%
+	String login = (String)request.getAttribute("login");
+	if (!login.equals("로그인하기")){
+	%>
+		<div >${login} 님 반갑습니다.</div>
+	<%} else {%>
+		<div onclick = "location.href='https://api.intra.42.fr/oauth/authorize?client_id=27ef6c6257d555818826985f9a1f85c85bf81ffe9d61780d4d6278cf845cddba&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2FftYoutube%2FgetTokenPage&response_type=code'">${login}</div>
+	<%} %>
+<!--    <div class="to_reservation" onclick="location.href='reservation'">
+        <p>예약하기</p>
         </div>
         <div class="to_home" onclick="location.href='cancellation'">
-          <p>예약취소</p>
-        </div>
+        <p>예약취소</p> -->
+        
       </nav>
       <div id="main_title">
         <p><b>42 SEOUL Youtube Studio 예약 시스템</b>
@@ -102,8 +109,8 @@
     </footer>
   </div>
   <script type="template" id="dayList">
-    <td >{user_id}</td>
-    </script>
+    <td class="tableData" data-day="{day}" data-hour="{hour}">{user_id}</td>
+  </script>
 
 </body>
 <script src="js/studio.js"></script>
