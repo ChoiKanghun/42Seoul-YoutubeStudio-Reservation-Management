@@ -54,6 +54,37 @@ public class FtYoutubeAPIController {
 		}
 		return ("redirect:reservation");
 	}
+	
+	@GetMapping(path="/get/studio")
+	public String postStudio(@ModelAttribute Studio studio,
+			@RequestParam(name="number") int number,
+			@RequestParam(name="intraId", required = false)String intraId) {
+		//select해서 해당 칸에 user_id가 존재하면 "fail"리턴.
+		//user_id가 '-'라면 insert 후 "success"리턴.
+		System.out.println("hi");
+		System.out.println(studio.getHour());
+		System.out.println(studio.getDay());
+		Studio selectUserId = ftYoutubeService.selectByDayHour(studio, number);
+		System.out.println(selectUserId);
+		if (selectUserId.getUserId() != null && intraId == null) {
+			return ("fail");	
+		} else if (selectUserId.getUserId() != null && selectUserId.getUserId().equals(intraId)) {
+			studio.setUserId(intraId);
+			studio.setUserPw("bookedWithOAuth");
+			ftYoutubeService.updateByDayHour(studio, number);
+		} else if (selectUserId.getUserId() != null && !selectUserId.getUserId().equals(intraId)) {
+			return ("fail");
+		} else if (selectUserId.getUserId() == null && intraId == null) {
+			ftYoutubeService.updateByDayHour(studio, number);
+		} else if (selectUserId.getUserId() == null && intraId.equals("로그인하기")) {
+			return ("fail");
+		} else if (selectUserId.getUserId() == null && intraId != null) {
+			studio.setUserId(intraId);
+			studio.setUserPw("bookedWithOAuth");
+			ftYoutubeService.updateByDayHour(studio, number);
+		}
+		return "redirect:mainpage";
+	}
 
 	@GetMapping(path="/get/reservation", produces = "application/json; charset=utf-8")
 	@ResponseBody
