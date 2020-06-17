@@ -1,6 +1,7 @@
 package kr.or.connect.ftYoutube.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttribute;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import kr.or.connect.ftYoutube.dto.Studio;
 import kr.or.connect.ftYoutube.service.FtYoutubeService;
@@ -19,29 +22,28 @@ public class FtYoutubeController {
 	FtYoutubeService ftYoutubeService; 
 	
 	@GetMapping(path="/")
-	public String index(
-			@RequestParam(name="code", required=false)String code,
-			HttpServletRequest request) {
-		if(code != null)
-			System.out.println(code);
-		System.out.println(request);
-			return "studio";
+	public String index() {
+			return "redirect:studio";
 	}
 	
 	@GetMapping(path="/studio")
 	public String studio(
-			@RequestParam(name="code", required=false)String code,
+			@RequestParam(name="login", required=false)String login,
+			@SessionAttribute(name="intraId", required=false) String intraId,
+			HttpSession session,
 			HttpServletRequest request) {
-		
-	if(code != null)
-		System.out.println(code);
-	System.out.println(request);
-		return "studio";
+	if (login != null) {
+		session.setAttribute("intraId", login);
+		request.setAttribute("login", login);
+	} else if (intraId != null) {
+		request.setAttribute("login", intraId);
+	} else
+		request.setAttribute("login", "로그인하기");
+	return "studio";
 	}
 	
 	@GetMapping(path="/reservation")
-	public String reservation()
-	{
+	public String reservation() {
 		return "studioReservation";
 	}
 	
@@ -66,11 +68,9 @@ public class FtYoutubeController {
 		
 		Studio selectUserId = ftYoutubeService.selectByDayHour(studio, number);
 		if (selectUserId.getUserId() != null) {
-
 			return ("redirect:reservation");
 		} else {
 			ftYoutubeService.updateByDayHour(studio, number);
-
 		}
 		return ("redirect:reservation");
 	}
@@ -83,5 +83,13 @@ public class FtYoutubeController {
 	@GetMapping(path="/testpage")
 	public String test() {
 		return "testpage";
+	}
+	
+	@GetMapping(path="/getTokenPage")
+	public String getTokenPage(RedirectAttributes redirectAttr,
+			@RequestParam(name="code")String code,
+			HttpServletRequest request) {
+  		request.setAttribute("code", code);
+		return "getTokenPage";
 	}
 }
