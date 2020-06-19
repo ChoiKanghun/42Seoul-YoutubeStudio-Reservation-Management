@@ -15,6 +15,13 @@
 	</properties>
 
 	<dependencies>
+	<!-- cors -->
+	<dependency>
+    <groupId>com.thetransactioncompany</groupId>
+    <artifactId>cors-filter</artifactId>
+    <version>1.3.2</version>
+</dependency>
+<!-- spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>

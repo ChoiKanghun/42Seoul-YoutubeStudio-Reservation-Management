@@ -1,10 +1,12 @@
 package kr.or.connect.ftYoutube.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,6 +17,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import kr.or.connect.ftYoutube.dto.Studio;
 import kr.or.connect.ftYoutube.service.FtYoutubeService;
 
+@CrossOrigin(origins="*")
 @Controller
 public class FtYoutubeController {
 	
@@ -22,7 +25,10 @@ public class FtYoutubeController {
 	FtYoutubeService ftYoutubeService; 
 	
 	@GetMapping(path="/")
-	public String index() {
+	public String index(
+			RedirectAttributes redirectAttr,
+			@RequestParam (name="code", required=false) String code) {
+			redirectAttr.addFlashAttribute("code", code);
 			return "redirect:studio";
 	}
 	
@@ -30,8 +36,20 @@ public class FtYoutubeController {
 	public String studio(
 			@RequestParam(name="login", required=false)String login,
 			@SessionAttribute(name="intraId", required=false) String intraId,
+			@RequestParam(name="code", required=false) String code,
 			HttpSession session,
-			HttpServletRequest request) {
+			HttpServletRequest request, 
+			HttpServletResponse response) {
+		response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
+		response.setHeader("Access-Control-Max-Age", "3600");
+		response.setHeader("Access-Control-Allow-Headers", "x-requested-with");
+		response.setHeader("Access-Control-Allow-Origin", "*");
+		
+	if (code != null) {
+		request.setAttribute("code", code);
+	} else {
+		request.setAttribute("code", null);
+	}
 	if (login != null) {
 		session.setAttribute("intraId", login);
 		request.setAttribute("login", login);
@@ -88,8 +106,14 @@ public class FtYoutubeController {
 	@GetMapping(path="/getTokenPage")
 	public String getTokenPage(RedirectAttributes redirectAttr,
 			@RequestParam(name="code")String code,
-			HttpServletRequest request) {
+			HttpServletRequest request, 
+			HttpServletResponse response) {
+		response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
+		response.setHeader("Access-Control-Max-Age", "3600");
+		response.setHeader("Access-Control-Allow-Headers", "x-requested-with");
+		response.setHeader("Access-Control-Allow-Origin", "*");
   		request.setAttribute("code", code);
+  		System.out.println("code :" + code);
 		return "getTokenPage";
 	}
 }

@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import kr.or.connect.ftYoutube.dto.Studio;
 import kr.or.connect.ftYoutube.service.FtYoutubeService;
 
+@CrossOrigin(origins="*")
 @RestController
 public class FtYoutubeAPIController {
 
@@ -46,7 +48,6 @@ public class FtYoutubeAPIController {
 		Studio selectUserId = ftYoutubeService.selectByDayHour(studio, number);
 
 		if (selectUserId.getUserId() != null) {
-			System.out.println("reservation failed");
 			return ("fail");	
 		}
 		else {
@@ -56,16 +57,12 @@ public class FtYoutubeAPIController {
 	}
 	
 	@GetMapping(path="/get/studio")
-	public String postStudio(@ModelAttribute Studio studio,
+	public String getStudio(@ModelAttribute Studio studio,
 			@RequestParam(name="number") int number,
 			@RequestParam(name="intraId", required = false)String intraId) {
 		//select해서 해당 칸에 user_id가 존재하면 "fail"리턴.
 		//user_id가 '-'라면 insert 후 "success"리턴.
-		System.out.println("hi");
-		System.out.println(studio.getHour());
-		System.out.println(studio.getDay());
 		Studio selectUserId = ftYoutubeService.selectByDayHour(studio, number);
-		System.out.println(selectUserId);
 		if (selectUserId.getUserId() != null && intraId == null) {
 			return ("fail");	
 		} else if (selectUserId.getUserId() != null && selectUserId.getUserId().equals(intraId)) {
@@ -123,12 +120,33 @@ public class FtYoutubeAPIController {
 	
 	@PostMapping(path="/delete/cancellation", produces = "application/json; charset=utf-8")
 	@ResponseBody
-	public Map<String, Object> deleteReservation(
+	public Map<String, Object> deleteReservationByPost(
 			@ModelAttribute Studio studio,
 			@RequestParam (name="number", required=true) int number)
 	{
 		Map<String, Object> map = new HashMap<>();
 		int deleteCount = 0;
+		try {
+			deleteCount = ftYoutubeService.deleteStudio(studio, number);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		map.put("deleteCount", deleteCount);
+		
+		return map;
+	}
+	
+	@GetMapping(path="/delete/cancellation", produces = "application/json; charset=utf-8")
+	@ResponseBody
+	public Map<String, Object> deleteReservationByGet(
+			@ModelAttribute Studio studio,
+			@RequestParam (name="number", required=true) int number,
+			@RequestParam(name="intraId", required = false)String intraId)
+	{
+		Map<String, Object> map = new HashMap<>();
+		int deleteCount = 0;
+		studio.setUserId(intraId);
+		studio.setUserPw("bookedWithOAuth");
 		try {
 			deleteCount = ftYoutubeService.deleteStudio(studio, number);
 		} catch (Exception e) {
