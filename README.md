@@ -2,7 +2,7 @@
 
 현재 다음 주소로 임시 서버를 열어두었습니다.
 임시서버라 느리고 제가 노트북을 켰을 때만 접속이 가능합니다. ㅠ
-http://202902b11bff.jp.ngrok.io/ftYoutube
+https://1539833c7420.jp.ngrok.io/ftYoutube
 
 # 프로젝트명
 
