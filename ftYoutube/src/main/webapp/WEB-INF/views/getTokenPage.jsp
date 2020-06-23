@@ -87,7 +87,6 @@
       + "code=" + "ce61f4c4344cca68e07bdd19ad1991ebbe6322fcb8442d9c3e5d31f2168a6967" +
       "&" + "redirect_uri=" + inputRedirectURI.value + "&" +
       "scope=public"; 
- 
  */
     $.ajax({
       method: "POST",
