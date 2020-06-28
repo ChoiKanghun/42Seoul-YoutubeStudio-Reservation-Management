@@ -26,7 +26,7 @@
       <input name="client_secret" placeholder="client_secret" value="068abc288188c153dd4eb402d7e2556e4d2bf804515584e81a5efa8c151b90f2">
       <input name="code" placeholder="code" value="${requestScope.code}">
 
-      <input name="redirect_uri" placeholder="redirect_uri" value="http://localhost:8080/ftYoutube/getTokenPage">
+      <input name="redirect_uri" placeholder="redirect_uri" value="http://121.166.59.211:8080/ftYoutube/getTokenPage">
       <button type="submit">button</button>
     </form>
 
@@ -51,7 +51,7 @@
     oReq.responseType = "text";
     oReq.addEventListener('load', function() {
       var json = JSON.parse(this.responseText);
-      window.location.href = 'http://localhost:8080/ftYoutube/studio?login=' +
+      window.location.href = 'http://121.166.59.211:8080/ftYoutube/studio?login=' +
         json.login;
 
     });

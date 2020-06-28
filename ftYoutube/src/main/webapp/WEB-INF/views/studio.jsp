@@ -48,7 +48,7 @@
 					} else {
 				%>
 				<div id = "login"
-					onclick="location.href='https://api.intra.42.fr/oauth/authorize?client_id=27ef6c6257d555818826985f9a1f85c85bf81ffe9d61780d4d6278cf845cddba&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2FftYoutube%2FgetTokenPage&response_type=code'">${login}</div>
+				onclick="location.href='https://api.intra.42.fr/oauth/authorize?client_id=27ef6c6257d555818826985f9a1f85c85bf81ffe9d61780d4d6278cf845cddba&redirect_uri=http%3A%2F%2F121.166.59.211%3A80%2FftYoutube%2Fstudio&response_type=code'">${login}</div>
 				<%
 					}
 				%>
@@ -125,12 +125,21 @@
 	<script type="template" id="dayList">
     <td class="tableData" data-day="{day}" data-hour="{hour}">{user_id}</td>
   </script>
-
+<form action="https://api.intra.42.fr/oauth/token" method="POST" target="ifrm">
+	<input name="grant_type" value="authorization_code">
+	<input name="client_id" value="27ef6c6257d555818826985f9a1f85c85bf81ffe9d61780d4d6278cf845cddba">
+	<input name="client_secret" value="068abc288188c153dd4eb402d7e2556e4d2bf804515584e81a5efa8c151b90f2">
+	<input name="code" value="00e5d72a51d708fb34376a9705c4b8bd5f8c709a0333de65d03152b7f72a26ff">
+	<input name="redirect_uri" value="http://121.166.59.211:80/ftYoutube/studio">
+	<button type="submit">submit</button>
+</form>
+	<button id="test">test</button>
+	
+<iframe name="ifrm" id="ifrm"></iframe>
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
 <script>
-var ngrok = "https://1539833c7420.jp.ngrok.io";
 
 function AjaxClass() {}
 AjaxClass.prototype.getApiWithToken = function(token) {
@@ -150,7 +159,9 @@ AjaxClass.prototype.getApiWithToken = function(token) {
   oReq.send();
 }
 <%String code = (String) request.getAttribute("code");
-			if (code != null) {%>
+System.out.println("code:" + code);
+			if (code != null) {
+			%>
 	var queryString = "grant_type=" + "authorization_code" + "&"
 			+ "client_id="
 			+ "27ef6c6257d555818826985f9a1f85c85bf81ffe9d61780d4d6278cf845cddba"
@@ -158,10 +169,11 @@ AjaxClass.prototype.getApiWithToken = function(token) {
 			+ "client_secret="
 			+ "068abc288188c153dd4eb402d7e2556e4d2bf804515584e81a5efa8c151b90f2"
 			+ "&" 
-			+ "code=" + "${code}" + "&" 
+			+ "code=" + "<%=code%>" + "&" 
 			+ "redirect_uri="
-			+ ngrok + + "/ftYoutube/studio" + "&"
+			+ "http://121.166.59.211:80/ftYoutube/studio" + "&"
 			+ "scope=public";
+	document.domain = "api.intra.42.fr";
 	$.ajax({
 		method : "POST",
 		url : "https://api.intra.42.fr/oauth/token",
@@ -169,14 +181,12 @@ AjaxClass.prototype.getApiWithToken = function(token) {
 		dataType : "json",
 		crossDomain : true,
 		contentType : "application/x-www-form-urlencoded",
-
 		headers : {
 			"Access-Control-Allow-Origin" : "*"
 		},
 		success : function(json) {
 			var token = json.access_token;
 			var getApiObj = new AjaxClass();
-			debugger;
 			getApiObj.getApiWithToken(token);
 		},
 		error : function(xhr) {
@@ -184,7 +194,10 @@ AjaxClass.prototype.getApiWithToken = function(token) {
 		}
 	});
 <%}%>
-	
+document.querySelector("#test").addEventListener("click", function(){
+	var responseAPI = document.querySelector("#ifrm").contentWindow.document;
+	console.log(responseAPI);
+});
 </script>
 <script src="js/studio.js"></script>
 
